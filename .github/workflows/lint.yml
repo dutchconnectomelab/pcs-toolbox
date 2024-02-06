@@ -19,7 +19,7 @@ jobs:
       - name: Install project dependencies
         run: |
           pip install --upgrade pip
-          pip install -e .[test]
+          pip install -e .[lint]
       - name: Run Flake8
         run: flake8 --ignore E203,E501,W503
       - name: Black code style

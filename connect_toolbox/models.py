@@ -52,7 +52,7 @@ class PCS(object):
             self.connectome_summary_statistics is not None
         ), "PCS model not fitted yet."
 
-    def evaluate(self, connectivity: np.ndarray) -> np.ndarray | float:
+    def evaluate(self, connectivity: np.ndarray) -> Union[np.ndarray, float]:
         """
         Evaluate the PCS model on a new subject.
 

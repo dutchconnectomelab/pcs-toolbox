@@ -45,6 +45,11 @@ def test_pcs_fit():
     dm = (dm + dm.T) / 2
     np.fill_diagonal(dm, 0)
 
+    # create random intercept
+    intercept = np.random.randn(100, 100)
+    intercept = (intercept + intercept.T) / 2
+    np.fill_diagonal(intercept, 0)
+
     # create random demographics
     demographics = pd.DataFrame(
         {
@@ -56,16 +61,16 @@ def test_pcs_fit():
 
     # create random subject data
     connectivity = np.random.randn(100, 100, 128)
-    connectivity[:, :, 64:] += dm[..., np.newaxis]
-
-    # add some confounding
-    connectivity[:, :, demographics["sex"] == "male"] -= 0.1
+    connectivity = (connectivity + np.swapaxes(connectivity, 0, 1)) / 2
+    connectivity += intercept[..., np.newaxis]  # add random intercept
+    connectivity[:, :, demographics["sex"] == "male"] -= 0.1  # add some confounding
+    connectivity[np.diag_indices(100)] = 0
+    connectivity[:, :, 64:] += dm[..., np.newaxis]  # add disease map
 
     pcs = PCS()
     pcs.fit(
         demographics,
         connectivity,
-        metric="cohen_d",
         variable_of_interest="dx",
         continuous_confounders=["age"],
         categorical_confounders=["sex"],
@@ -74,12 +79,26 @@ def test_pcs_fit():
     estimated_map = pcs.css
 
     assert estimated_map.shape == (100, 100)
-    assert np.corrcoef(utils.vectorize(estimated_map), utils.vectorize(dm))[0, 1] > 0.8
+    assert np.corrcoef(utils.vectorize(estimated_map), utils.vectorize(dm))[0, 1] > 0.95
+
+    pcs_reverse = PCS()
+    pcs_reverse.fit(
+        demographics,
+        connectivity,
+        variable_of_interest="dx",
+        baseline_condition="schizophrenia",
+        continuous_confounders=["age"],
+        categorical_confounders=["sex"],
+    )
+    np.testing.assert_almost_equal(pcs.css, -pcs_reverse.css)
 
     # create fresh subject data from the same distribution
     connectivity = np.random.randn(100, 100, 128)
-    connectivity[:, :, 64:] += dm[..., np.newaxis]
+    connectivity = (connectivity + np.swapaxes(connectivity, 0, 1)) / 2
+    connectivity += intercept[..., np.newaxis]
     connectivity[:, :, demographics["sex"] == "male"] -= 0.1
+    connectivity[np.diag_indices(100)] = 0
+    connectivity[:, :, 64:] += dm[..., np.newaxis]
 
     pcs_scores = pcs.evaluate(connectivity)
     assert np.mean(pcs_scores[:64]) < np.mean(pcs_scores[64:])

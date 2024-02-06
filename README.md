@@ -25,13 +25,12 @@ Diseasemaps are provided in `diseasemaps/`.
 
 ## Usage
 
+Example 1: evaluate PCS on a novel subject.
 
 ```
-import connect_toolbox as ct
-import pandas as pd
 import numpy as np
 
-## EXAMPLE 1: evaluate PCS on a novel subject ##
+import connect_toolbox as ct
 
 # generate a random connectivity matrix as example
 subject_connectivity = np.random.randn(82, 82)
@@ -39,8 +38,59 @@ subject_connectivity = (subject_connectivity + subject_connectivity.T) / 2
 subject_connectivity[np.diag_indices(82)] = 0
 
 # evaluate PCS score of schizophrenia
-pcs = ct.models.PCS(dx="schizophrenia", modality="functional-connectivity", atlas="aparc+aseg")
+pcs = ct.PCS(dx="schizophrenia", modality="functional-connectivity", atlas="aparc+aseg")
 
 subject_score = pcs.evaluate(subject_connectivity)
 ```
 
+Example 2: use only subset of datasets
+
+```
+pcs = ct.PCS(
+    dx="schizophrenia",
+    modality="functional-connectivity",
+    atlas="aparc+aseg",
+    studies=["COBRE"],
+)
+```
+
+This is especially useful when you want to run PCS on a public dataset and ensure it is excluded from fitting the model:
+
+```
+all_studies = ct.data.list_studies(
+    dx="alzheimer",
+    modality="functional-connectivity",
+    atlas="aparc+aseg",
+)
+
+included_studies = [study for study in all_studies if "ADNI" not in study]
+
+pcs = ct.PCS(
+    dx="alzheimer",
+    modality="functional-connectivity",
+    atlas="aparc+aseg",
+    studies=included_studies,
+)
+```
+
+Example 3: compute a PCS model from new data
+
+```
+import numpy as np
+import pandas as pd
+
+demographics = pd.read_csv("participants.csv")  # dx, age & gender for N subjects
+connectivity = np.load(
+    "group_connectivity.npy"
+)  # 82 x 82 x N matrix with connectivity data for all subjects
+
+pcs = ct.models.PCS()
+pcs.fit(
+    demographics,
+    connectivity,
+    metric="cohen_d",
+    variable_of_interest="dx",
+    continuous_confounders=["age"],
+    categorical_confounders=["gender"],
+)
+```

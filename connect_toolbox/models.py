@@ -11,6 +11,9 @@ from connect_toolbox import utils, validate
 
 
 class PCS(object):
+    """
+    PolyConnectomic Score (PCS) model.
+    """
 
     def __init__(
         self,
@@ -42,11 +45,29 @@ class PCS(object):
             self.connectome_summary_statistics = None
 
     def assert_fitted(self) -> None:
+        """
+        Assert that the PCS model has been fitted.
+        """
         assert (
             self.connectome_summary_statistics is not None
         ), "PCS model not fitted yet."
 
     def evaluate(self, connectivity: np.ndarray) -> np.ndarray | float:
+        """
+        Evaluate the PCS model on a new subject.
+
+        Parameters
+        ----------
+        connectivity : np.ndarray
+            A 2D array with shape (n_regions, n_regions) containing the connectivity data,
+            or a 3D array with shape (n_regions, n_regions, n_subjects) containing the connectivity
+            data for multiple subjects.
+
+        Returns
+        -------
+        np.ndarray | float
+            The PCS score(s).
+        """
         self.assert_fitted()
 
         assert connectivity.shape[0:2] == self.connectome_summary_statistics.shape, (
@@ -61,6 +82,9 @@ class PCS(object):
 
     @property
     def css(self) -> np.ndarray:
+        """
+        Get the connectome summary statistics.
+        """
         self.assert_fitted()
         return self.connectome_summary_statistics
 

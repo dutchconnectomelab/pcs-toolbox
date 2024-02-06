@@ -21,8 +21,6 @@ git pull
 
 Diseasemaps are provided in `diseasemaps/`.
 
-:warning: Disease maps are still work in progress and may change in subsequent iterations.
-
 ## Usage
 
 Example 1: evaluate PCS on a novel subject.

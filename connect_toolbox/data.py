@@ -8,36 +8,6 @@ from connect_toolbox import utils, validate
 DISEASEMAP_DIR = Path(__file__).parent.parent / "diseasemaps"
 
 
-def _load_map(mapfile: Path) -> (np.ndarray, list):
-    def _val(el):
-        try:
-            return float(el)
-        except:
-            assert "nan" in el.lower()
-            return np.nan
-
-    def _row(line):
-        els = line.split(",")[1:]
-        els = [_val(el) for el in els]
-        return els
-
-    txt = mapfile.read_text().strip()
-    lines = txt.split("\n")
-    lines = [l for l in lines if not l.startswith("#")]
-    areas = lines[0].split(",")[1:]
-    lines = lines[1:]
-    rows = [_row(l) for l in lines]
-    dm = np.stack(rows)
-    dm = np.triu(dm, 1)
-    dm += dm.T
-
-    assert (
-        len(areas) == dm.shape[0]
-    ), f"Error when parsing {mapfile}: areas and dimension dm do not match."
-
-    return dm, areas
-
-
 def _atlas_nodes(atlas: str) -> int:
     if atlas == "aparc":
         return 68
@@ -53,6 +23,27 @@ def load_css(
     metric: str,
     atlas: str,
 ) -> np.ndarray:
+    """
+    Load the connectome summary statistics (CSS) for a given disease, modality, metric and atlas.
+
+    This is currently a wrapper around `compute_css` with `studies="all_studies"`.
+
+    Parameters
+    ----------
+    dx : str
+        Disease name.
+    modality : str
+        Modality name.
+    metric : str
+        Metric name.
+    atlas : str
+        Atlas name.
+
+    Returns
+    -------
+    np.ndarray
+        Connectome summary statistics (CSS) matrix.
+    """
     validate.dx(dx)
     validate.modality_and_metric(modality, metric)
     validate.atlas(atlas)
@@ -61,6 +52,25 @@ def load_css(
 
 
 def list_studies(dx, modality, metric, atlas):
+    """
+    List the studies available for a given disease, modality, metric and atlas.
+
+    Parameters
+    ----------
+    dx : str
+        Disease name.
+    modality : str
+        Modality name.
+    metric : str
+        Metric name.
+    atlas : str
+        Atlas name.
+
+    Returns
+    -------
+    List[str]
+        List of study names.
+    """
     validate.dx(dx)
     validate.modality_and_metric(modality, metric)
     validate.atlas(atlas)
@@ -142,6 +152,31 @@ def compute_css(
     atlas: str,
     studies: Union[str, Iterable[str]],
 ) -> np.ndarray:
+    """
+    Compute the connectome summary statistics (CSS) for a given list of studies.
+
+    Effect sizes are combined using a meta-analytic approach, and the combined effect
+    size is returned as the CSS.
+
+    Parameters
+    ----------
+    dx : str
+        Disease name.
+    modality : str
+        Modality name.
+    metric : str
+        Metric name.
+    atlas : str
+        Atlas name.
+    studies : Union[str, Iterable[str]]
+        Study name(s); use "all_studies" to include all studies. Studies can
+        be listed with `list_studies`.
+
+    Returns
+    -------
+    np.ndarray
+        Connectome summary statistics (CSS) matrix.
+    """
     validate.dx(dx)
     validate.modality_and_metric(modality, metric)
     validate.atlas(atlas)

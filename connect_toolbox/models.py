@@ -52,7 +52,7 @@ class PCS(object):
             self.connectome_summary_statistics is not None
         ), "PCS model not fitted yet."
 
-    def evaluate(self, connectivity: np.ndarray) -> np.ndarray | float:
+    def evaluate(self, connectivity: np.ndarray) -> Union[np.ndarray, float]:
         """
         Evaluate the PCS model on a new subject.
 
@@ -163,6 +163,9 @@ class PCS(object):
         demographics[variable_of_interest] = demographics[variable_of_interest].apply(
             var_of_interest_to_binary
         )
+
+        continuous_confounders = continuous_confounders or []
+        categorical_confounders = categorical_confounders or []
 
         dep_var = utils.vectorize(connectivity)
         indep_var = pd.merge(

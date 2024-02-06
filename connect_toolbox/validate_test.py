@@ -2,7 +2,6 @@ from connect_toolbox import validate
 
 
 def test_dx():
-
     def fun(dx):
         validate.dx(dx)
         return dx

@@ -164,6 +164,9 @@ class PCS(object):
             var_of_interest_to_binary
         )
 
+        continuous_confounders = continuous_confounders or []
+        categorical_confounders = categorical_confounders or []
+
         dep_var = utils.vectorize(connectivity)
         indep_var = pd.merge(
             demographics[[variable_of_interest] + continuous_confounders],

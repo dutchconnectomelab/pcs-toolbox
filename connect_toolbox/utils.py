@@ -1,5 +1,3 @@
-from inspect import getcallargs
-
 import numpy as np
 
 from connect_toolbox import validate

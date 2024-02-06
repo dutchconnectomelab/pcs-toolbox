@@ -3,7 +3,7 @@ from typing import Iterable, Union
 
 import numpy as np
 
-from connect_toolbox import utils, validate
+from connect_toolbox import validate
 
 DISEASEMAP_DIR = Path(__file__).parent.parent / "diseasemaps"
 

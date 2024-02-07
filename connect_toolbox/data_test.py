@@ -36,9 +36,9 @@ def test_load_css():
     # check diagonal is 0
     assert np.all(np.diag(css) == 0)
 
-    # check that the mean is negative
+    # check that the median is negative
     vals = utils.vectorize(css)
-    assert np.mean(vals) < 0
+    assert np.median(vals) < 0
 
     css_aparc = data.load_css(
         "schizophrenia",
@@ -67,7 +67,7 @@ def test_compute_css():
     assert np.all(np.diag(css) == 0)
 
     vals = utils.vectorize(css)
-    assert np.mean(vals) < 0
+    assert np.median(vals) < 0
 
     css_precomputed = data.load_css(
         "schizophrenia",

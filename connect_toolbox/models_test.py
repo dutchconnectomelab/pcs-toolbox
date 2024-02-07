@@ -50,6 +50,12 @@ def test_pcs_fit():
     intercept = (intercept + intercept.T) / 2
     np.fill_diagonal(intercept, 0)
 
+    # create random std
+    std = np.random.rand(100, 100) * 5 + 0.1
+    std = np.triu(std)
+    std = std + std.T
+    np.fill_diagonal(std, 0)
+
     # create random demographics
     demographics = pd.DataFrame(
         {
@@ -60,7 +66,7 @@ def test_pcs_fit():
     )
 
     # create random subject data
-    connectivity = np.random.randn(100, 100, 128)
+    connectivity = np.random.randn(100, 100, 128) * std[..., np.newaxis]
     connectivity = (connectivity + np.swapaxes(connectivity, 0, 1)) / 2
     connectivity += intercept[..., np.newaxis]  # add random intercept
     connectivity[:, :, demographics["sex"] == "male"] -= 0.1  # add some confounding
@@ -79,7 +85,12 @@ def test_pcs_fit():
     estimated_map = pcs.css
 
     assert estimated_map.shape == (100, 100)
-    assert np.corrcoef(utils.vectorize(estimated_map), utils.vectorize(dm))[0, 1] > 0.95
+    assert (
+        np.corrcoef(
+            utils.vectorize(estimated_map), utils.vectorize(dm) / utils.vectorize(std)
+        )[0, 1]
+        > 0.95
+    )
 
     pcs_reverse = PCS()
     pcs_reverse.fit(
@@ -93,7 +104,7 @@ def test_pcs_fit():
     np.testing.assert_almost_equal(pcs.css, -pcs_reverse.css)
 
     # create fresh subject data from the same distribution
-    connectivity = np.random.randn(100, 100, 128)
+    connectivity = np.random.randn(100, 100, 128) * std[..., np.newaxis]
     connectivity = (connectivity + np.swapaxes(connectivity, 0, 1)) / 2
     connectivity += intercept[..., np.newaxis]
     connectivity[:, :, demographics["sex"] == "male"] -= 0.1

@@ -183,6 +183,19 @@ class PCS(object):
 
         betas = np.linalg.lstsq(indep_var, dep_var.T, rcond=None)[0]
         betas = betas[0, :]  # select betas for the variable of interest
-        self.connectome_summary_statistics = utils.devectorize(betas)
+        dep_var_control = dep_var[:, indep_var[:, 0] == 0]
+        n_control = dep_var_control.shape[-1]
+        dep_var_patient = dep_var[:, indep_var[:, 0] == 1]
+        n_patient = dep_var_patient.shape[-1]
+        pooled_sd = np.sqrt(
+            (
+                (n_control - 1) * np.var(dep_var_control, ddof=1, axis=-1)
+                + (n_patient - 1) * np.var(dep_var_patient, ddof=1, axis=-1)
+            )
+            / (n_control + n_patient - 2)
+        )
+        cohen_ds = betas / pooled_sd
+
+        self.connectome_summary_statistics = utils.devectorize(cohen_ds)
 
         return self

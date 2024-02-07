@@ -23,7 +23,7 @@ Diseasemaps are provided in `diseasemaps/`.
 
 ## Usage
 
-Example 1: evaluate PCS on a novel subject.
+### Example 1: evaluate PCS on a novel subject.
 
 ```
 import numpy as np
@@ -41,7 +41,7 @@ pcs = ct.PCS(dx="schizophrenia", modality="functional-connectivity", atlas="apar
 subject_score = pcs.evaluate(subject_connectivity)
 ```
 
-Example 2: use only subset of datasets
+### Example 2: use only subset of datasets
 
 ```
 pcs = ct.PCS(
@@ -71,7 +71,7 @@ pcs = ct.PCS(
 )
 ```
 
-Example 3: compute a PCS model from new data
+### Example 3: compute a PCS model from new data
 
 ```
 import numpy as np

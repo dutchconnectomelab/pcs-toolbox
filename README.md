@@ -41,7 +41,7 @@ pcs = ct.PCS(dx="schizophrenia", modality="functional-connectivity", atlas="apar
 subject_score = pcs.evaluate(subject_connectivity)
 ```
 
-### Example 2: use only subset of datasets
+### Example 2: use only a subset of datasets
 
 ```
 pcs = ct.PCS(
@@ -58,6 +58,7 @@ This is especially useful when you want to run PCS on a public dataset and ensur
 all_studies = ct.data.list_studies(
     dx="alzheimer",
     modality="functional-connectivity",
+    metric="gmean_scrubbed_0.01-0.1",
     atlas="aparc+aseg",
 )
 
@@ -66,6 +67,7 @@ included_studies = [study for study in all_studies if "ADNI" not in study]
 pcs = ct.PCS(
     dx="alzheimer",
     modality="functional-connectivity",
+    metric="gmean_scrubbed_0.01-0.1",
     atlas="aparc+aseg",
     studies=included_studies,
 )

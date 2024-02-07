@@ -82,12 +82,12 @@ connectivity = np.load(
     "group_connectivity.npy"
 )  # 82 x 82 x N matrix with connectivity data for all subjects
 
-pcs = ct.models.PCS()
+pcs = ct.PCS()
 pcs.fit(
     demographics,
     connectivity,
-    metric="cohen_d",
     variable_of_interest="dx",
+    baseline_condition="control",
     continuous_confounders=["age"],
     categorical_confounders=["gender"],
 )

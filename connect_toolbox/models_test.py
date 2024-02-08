@@ -25,7 +25,7 @@ def test_pcs_evaluate():
 
     assert subject_score == np.inner(
         utils.vectorize(subject_connectivity), utils.vectorize(subject_connectivity)
-    )
+    ) / len(utils.vectorize(subject_connectivity))
 
     connectivity = np.random.randn(82, 82, 10)
     connectivity = connectivity + np.swapaxes(connectivity, 0, 1)

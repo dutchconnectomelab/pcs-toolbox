@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 
 from connect_toolbox import data, utils
 from connect_toolbox.models import PCS

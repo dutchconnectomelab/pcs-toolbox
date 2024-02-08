@@ -4,7 +4,6 @@ from typing import Iterable, Optional, Union
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 import numpy as np
-import pandas as pd
 
 import connect_toolbox.data
 from connect_toolbox import utils, validate

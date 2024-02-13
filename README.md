@@ -73,24 +73,3 @@ pcs = ct.PCS(
 )
 ```
 
-### Example 3: compute a PCS model from new data
-
-```
-import numpy as np
-import pandas as pd
-
-demographics = pd.read_csv("participants.csv")  # dx, age & gender for N subjects
-connectivity = np.load(
-    "group_connectivity.npy"
-)  # 82 x 82 x N matrix with connectivity data for all subjects
-
-pcs = ct.PCS()
-pcs.fit(
-    demographics,
-    connectivity,
-    variable_of_interest="dx",
-    baseline_condition="control",
-    continuous_confounders=["age"],
-    categorical_confounders=["gender"],
-)
-```

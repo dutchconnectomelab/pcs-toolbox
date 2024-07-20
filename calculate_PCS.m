@@ -1,4 +1,4 @@
-function PCS_scores = calculate_PCS(cnn, disorder, gmean, atlas, p_threshold)
+function PCS_scores = calculate_PCS(cnn, varargin)
 % CALCULATE_PCS calculates the polyconnectomic scores from user connectivity matrices and cohen's d summary statistics
 % Inputs:
 %   cnn: A 2D or 3D matrix of connectivity data (regions x regions) or
@@ -9,6 +9,23 @@ function PCS_scores = calculate_PCS(cnn, disorder, gmean, atlas, p_threshold)
 %   p_threshold: p-value threshold for filtering (optional)
 % Output:
 %   PCS_scores: A vector of PCS scores
+    
+% Parse input arguments
+p = inputParser;
+addRequired(p, 'cnn');
+addParameter(p, 'disorder', '');
+addParameter(p, 'gmean', false); % Default is false
+addParameter(p, 'atlas', '');
+addParameter(p, 'p_threshold', 1, @isnumeric); % Default is 1
+
+% Parse input arguments
+parse(p, cnn, varargin{:});
+
+% Extract parsed values
+disorder = p.Results.disorder;
+gmean = p.Results.gmean;
+atlas = p.Results.atlas;
+p_threshold = p.Results.p_threshold;
 
 try
     % Load CSS 

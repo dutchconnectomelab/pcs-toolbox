@@ -9,14 +9,10 @@ try
         error('Variable ''cnn'' not found in the loaded data.');
     end
 
-    % Set analysis parameters
-    disorder = 'schizophrenia'; 
-    gmean = true;
-    atlas = 'aparc';
-    p_threshold = 1;
-
     % Call calculate_PCS function
-    PCS_scores = calculate_PCS_pval(cnn, disorder, gmean, atlas, p_threshold);
+    PCS_subject = calculate_PCS(cnn, 'disorder', 'schizophrenia', 'gmean', true, 'atlas', 'aparc');
+    % Optional use of p_threshold;
+    % PCS_subject = calculate_PCS(cnn, 'disorder', 'schizophrenia', 'gmean', true, 'atlas', 'aparc', 'p_threshold', 0.05);
 
     % Completion message
     disp('PCS Scores Calculated!');

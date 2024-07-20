@@ -12,14 +12,9 @@ mat_data <- readMat("/Users/admin/Documents/v2023-08-23/venv73/DATA/COBRE/connec
 # Extract cnn data from loaded .mat file
 cnn <- mat_data$connectivity  # Adjust this line based on the structure of your subject data (we have .mat file)
 
-# Set parameters
-disorder <- 'schizophrenia'
-gmean <- TRUE
-atlas <- 'aparc'
-
 # Call calculate_PCS function
 source("/Users/admin/Documents/v2023-08-23/venv73/PCS_Toolbox/calculate_PCS.r")
-PCS_scores <- calculate_PCS(cnn, disorder, gmean, atlas, p_threshold=0.01)
+PCS_subject <- calculate_PCS(cnn, disorder='schizophrenia', gmean=TRUE, atlas='aparc')
 
 # Print first few scores
 print(head(PCS_scores))

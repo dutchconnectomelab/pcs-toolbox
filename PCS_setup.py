@@ -8,13 +8,9 @@ mat_data = scipy.io.loadmat('/Users/admin/Documents/v2023-08-23/venv73/DATA/COBR
 # Extract cnn data from loaded .mat file
 cnn = mat_data['connectivity']
 
-# Set parameters
-disorder = 'schizophrenia'
-gmean = True
-atlas = 'aparc'
-
 # Call calculate_PCS function
-PCS_scores = calculate_PCS(cnn, disorder, gmean, atlas, p_threshold=1)
+PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='aparc')
+# PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='aparc', p_threshold=0.01)
 
 # Print first few scores
 print("First few PCS scores:")

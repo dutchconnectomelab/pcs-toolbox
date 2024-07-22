@@ -82,7 +82,7 @@ The `cnn` parameter is a connectivity matrix representing functional brain conne
 - **3D Matrix (N_regions × N_regions × N_subjects):**
   If `cnn` is a 3D matrix, PCS is calculated for each subject represented in the third dimension; computed individually for each subject's connectivity data.
 
-This allows for flexibility in handling both single-subject and multi-subject connectivity data. It is crucial to ensure that the atlas used to generate the input connectivity matrix matches the atlas specified in the function parameters for accurate PCS calculation. Supported matrix file formats include `.mat`, `.csv`, and `.npy` files.
+This allows for flexibility in handling both single-subject and multi-subject connectivity data. It is crucial to ensure that the atlas used to generate the input connectivity matrix matches the atlas specified in the function parameters for accurate PCS calculation.
 
 
 ### Usage in R, MATLAB, and Python
@@ -98,7 +98,7 @@ source("path/to/your-repository/calculate_PCS.R")
 library(R.matlab)
 # Load .mat file with connectivity data
 cnn <- readMat("path/to/your-repository/connectivity_data.mat")
-# Calculate the PCS for schizophrenia using Desikian-Killiany atlas (82 brain regions) and global mean corrected
+# Calculate the PCS for schizophrenia using Desikian-Killiany atlas and global mean corrected
 PCS_subject <- calculate_PCS(cnn, disorder='schizophrenia', gmean=TRUE, atlas='aparc')
 ```
 
@@ -109,7 +109,7 @@ PCS_subject <- calculate_PCS(cnn, disorder='schizophrenia', gmean=TRUE, atlas='a
 addpath('path/to/your-repository')
 % Load connectivity data 
 cnn = load('path/to/your-repository/connectivity_data.mat');
-# Calculate the PCS for schizophrenia using Desikian-Killiany atlas (82 brain regions) and global mean corrected
+# Calculate the PCS for schizophrenia using Desikian-Killiany atlas and global mean corrected
 PCS_subject = calculate_PCS(cnn, 'disorder', 'schizophrenia', 'gmean', true, 'atlas', 'aparc');
 ```
 
@@ -127,7 +127,7 @@ import scipy.io
 from calculate_PCS import *
 # Load connectivity data 
 cnn = scipy.io.loadmat('path/to/your-repository/connectivity_data.mat')
-# Calculate the PCS for schizophrenia using Desikian-Killiany atlas (82 brain regions) and global mean corrected
+# Calculate the PCS for schizophrenia using Desikian-Killiany atlas and global mean corrected
 PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='aparc')
 ```
 
@@ -174,7 +174,7 @@ The calculate_PCS function returns an array of PCS scores, one for each subject 
 
 
 ### Troubleshooting:
-Ensure all file paths are correct and required data files exist. If you encounter an error message starting with "An error occurred when loading the data:", check your file paths and data formats. Check that the dimensions of your connectivity data (cnn) match the CSS files (same atlas). Additionally, we advise using CSS with global mean signal correction if the provided cnn also uses this preprocessing method.
+Check that the dimensions of your connectivity data (cnn) match the CSS files (same atlas). Additionally, we advise using CSS with global mean signal correction if the provided cnn also uses this preprocessing method.
 
 ### Citing the PCS-Toolbox:
 If you use the PCS-Toolbox in your research, please cite: 

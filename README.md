@@ -15,14 +15,13 @@
 13. [License](#license)
 
 ## Introduction
-The PCS-Toolbox calculates PolyConnectomic Scores (PCS) to quantify the presence of disease-related brain connectivity signatures in individual connectomes. PCS aggregates evidence of disorder-related neural circuitry alterations across the brain into a single, interpretable score. 
+The PCS-Toolbox calculates Polyconnectomic Scores (PCS) to quantify the presence of disease-related brain connectivity signatures in individual connectomes. PCS integrates existing knowledge of disorder-related brain circuitry, aggregating these connectivity signatures or connectome summary statistics (CSS) across the entire brain into a single, interpretable metric.
 
-Alongside toolbox scripts, this repository contains Connectome Summary Statistics (CSS) for various neuropsychiatric disorders, generated through the following process:
-- Cohen's d (effect size) was computed for each edge (connection) in the brain connectivity matrix for each dataset within a disorder (in each study, connection differences were measured between patients and controls)
-- A meta-analysis was then conducted to aggregate these edge-wise effects across datasets for each disorder (results were combined from the multiple studies of the same disorder)
+This repository includes toolbox scripts and CSS of connectivity signatures for various neuropsychiatric disorders. These CSS represent the strength and direction of associations between brain connections and specific disorders across connectomes. The CSS were generated through the following process:
+- Effect size estimation per dataset: Cohen's d was computed for each brain connection, creating a connectivity matrix for each dataset within a disorder. This matrix indicates connections with decreased functional connectivity (FC) in patients (negative d) or increased FC in patients compared to controls (positive d).
+- Meta-Analysis: A meta-analysis was conducted to aggregate these connectivity-wise effects across datasets for each disorder.
 
-These CSS represent the strength and direction of associations between brain connections and specific disorders across connectomes. 
-Here we provide the meta-analytic CSS for more than 10 disorders, encompassing ~5,000 patients and ~5,000 controls across 20+ datasets, allowing researchers to compute PCS on their own data.
+We provide the meta-analytic CSS for more than 10 disorders, encompassing approximately 5,000 patients and 5,000 controls across 20+ datasets, allowing researchers to compute PCS on their own data.
 
 ## Prerequisites
 - Python 3.7+, MATLAB, or R
@@ -164,18 +163,18 @@ Global mean signal correction is a technique used to reduce the impact of non-ne
 
 
 ### The PCS-Toolbox supports the following atlas parcellation schemes:
-- `aparc` (Desikan-Killiany atlas with 82 regions total, including cortical and subcortical structures) 
+- `aparc` (Desikan-Killiany atlas with 68 cortical regions) 
 
-Two different resolutions of the ‘Lausanne’ atlas, derived from the Desikan-Killiany atlas, to provide more fine-grained parcellations of the cortex;
+Two different resolutions of the Desikan-Killiany atlas, to provide more fine-grained parcellations of the cortex:
 - `lausanne120` (114 regions)
 - `lausanne250` (219 regions)
 
 ### Output PCS Scores:
-The calculate_PCS function returns an array of PCS scores, one for each subject in the input data. Higher PCS scores indicate a stronger presence of connectivity patterns associated with the specified disorder. Importantly, scores are relative measures and should be interpreted in comparison to a control group or normative data.
+The calculate_PCS function returns an array of PCS scores, one for each subject in the input data. Higher PCS indicate a stronger presence of connectivity patterns associated with the specified disorder. Importantly, scores are relative measures and should be interpreted in comparison to a control group or normative data.
 
 
 ### Troubleshooting:
-Ensure all file paths are correct and required data files exist. Check that the dimensions of your connectivity data match the CSS files (same atlas). If you encounter an error message starting with "An error occurred when loading the data:", check your file paths and data formats. Additionally, we advise using CSS with global mean signal correction if the provided cnn also uses this preprocessing method.
+Ensure all file paths are correct and required data files exist. If you encounter an error message starting with "An error occurred when loading the data:", check your file paths and data formats. Check that the dimensions of your connectivity data (cnn) match the CSS files (same atlas). Additionally, we advise using CSS with global mean signal correction if the provided cnn also uses this preprocessing method.
 
 ### Citing the PCS-Toolbox:
 If you use the PCS-Toolbox in your research, please cite: 
@@ -190,11 +189,8 @@ Openly Accessible Datasets
 - Bipolar & Schizophrenia Consortium for Parsing Intermediate Phenotypes (BSNIP-1): ([NDA](https://nda.nih.gov); NDAR ID: 2274)
 - Centre for Biomedical Research Excellence (COBRE): [schizconnect.org](http://schizconnect.org)
 - Consortium for Neuropsychiatric Phenomics (CNP): OpenNeuro [openneuro.org](http://openneuro.org)
-- Function Biomedical Informatics Research Network (FBIRN): [schizconnect.org](http://schizconnect.org)
 - Healthy Brain Network (HBN): [fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network](http://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network)
-- The Mental Illness and Neuroscience Discovery Institute (MIND) Clinical Imaging Consortium (MCIC) dataset (MCICShare): [schizconnect.org](http://schizconnect.org)
 - Enhanced Nathan Kline Institute (NKI-Enhanced): [fcon_1000.projects.nitrc.org/indi/enhanced/](http://fcon_1000.projects.nitrc.org/indi/enhanced/)
-- Northwestern University Schizophrenia Data and Software Tool (NUSDAST): [schizconnect.org](http://schizconnect.org)
 - Open Access Series of Imaging Studies (OASIS-3): [oasis-brains.org](http://www.oasis-brains.org)
 - Japanese Strategic Research Program for the Promotion of Brain Science (SRPBS): [bicr-resource.atr.jp/srpbs1600](https://bicr-resource.atr.jp/srpbs1600)
 - UK Biobank (UKB): [ukbiobank.ac.uk](https://www.ukbiobank.ac.uk)

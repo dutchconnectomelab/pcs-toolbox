@@ -13,7 +13,6 @@
 11. [Troubleshooting](#troubleshooting)
 12. [Citing the PCS-Toolbox](#citing-the-pcs-toolbox)
 13. [License](#license)
-14. [Contact](#contact)
 
 ## Introduction
 The PCS-Toolbox calculates PolyConnectomic Scores (PCS) to quantify the presence of disease-related brain connectivity signatures in individual connectomes. PCS aggregates evidence of disorder-related neural circuitry alterations across the brain into a single, interpretable score. 

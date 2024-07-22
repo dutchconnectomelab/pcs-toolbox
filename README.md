@@ -10,9 +10,8 @@
 8. [Global Mean Correction (gmean)](#global-mean-correction-gmean)
 9. [Supported Atlas Parcellation Schemes](#supported-atlas-parcellation-schemes)
 10. [Output PCS Scores](#output-pcs-scores)
-11. [Troubleshooting](#troubleshooting)
-12. [Citing the PCS-Toolbox](#citing-the-pcs-toolbox)
-13. [License](#license)
+11. [Citing the PCS-Toolbox](#citing-the-pcs-toolbox)
+12. [License](#license)
 
 ## Introduction
 The PCS-Toolbox calculates Polyconnectomic Scores (PCS) to quantify the presence of disease-related brain connectivity signatures in individual connectomes. PCS integrates existing knowledge of disorder-related brain circuitry, aggregating these connectivity signatures or connectome summary statistics (CSS) across the entire brain into a single, interpretable metric.
@@ -161,6 +160,7 @@ Global mean signal correction is a technique used to reduce the impact of non-ne
 
 - When `gmean=False` (Python) or the parameter is omitted (MATLAB/R), the toolbox uses functional CSS without global mean signal correction.
 
+We advise using CSS with `gmean` if the provided `cnn` also uses this preprocessing method.
 
 ### The PCS-Toolbox supports the following atlas parcellation schemes:
 - `aparc` (Desikan-Killiany atlas with 68 cortical regions) 
@@ -169,12 +169,10 @@ Two different resolutions of the Desikan-Killiany atlas, to provide more fine-gr
 - `lausanne120` (114 regions)
 - `lausanne250` (219 regions)
 
+Ensure that the atlas used in the provided `cnn` matches the CSS.
+
 ### Output PCS Scores:
 The calculate_PCS function returns an array of PCS scores, one for each subject in the input data. Higher PCS indicate a stronger presence of connectivity patterns associated with the specified disorder. Importantly, scores are relative measures and should be interpreted in comparison to a control group or normative data.
-
-
-### Troubleshooting:
-Check that the dimensions of your connectivity data (cnn) match the CSS files (same atlas). Additionally, we advise using CSS with global mean signal correction if the provided cnn also uses this preprocessing method.
 
 ### Citing the PCS-Toolbox:
 If you use the PCS-Toolbox in your research, please cite: 

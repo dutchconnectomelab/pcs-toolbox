@@ -139,14 +139,15 @@ PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='ap
 
 ### The PCS-Toolbox supports the following neuropsychiatric and neurodegenerative disorders:
 
-- Alzheimer's Disease (AD): `"alzheimer"`
+- Alzheimer's Disease: `"alzheimer"`
 - Anxiety Disorders: `"anxiety"`
-- Attention Deficit Hyperactivity Disorder (ADHD): `"adhd"`
-- Autism Spectrum Disorder (ASD): `"autism"`
-- Bipolar Disorder (BD): `"bipolar"`
-- Frontotemporal Dementia (FTD): `"ftd"`
-- Major Depressive Disorder (MDD): `"depression"`
-- Parkinson's Disease (PD): `"parkinson"`
+- Attention Deficit Hyperactivity Disorder: `"adhd"`
+- Autism Spectrum Disorder: `"autism"`
+- Bipolar Disorder: `"bipolar"`
+- Frontotemporal Dementia: `"ftd"`
+- Major Depressive Disorder: `"depression"`
+- Obsessive-compulsive disorder: `"ocd"`
+- Parkinson's Disease: `"parkinson"`
 - Schizoaffective Disorder: `"schizoaffective"`
 - Schizophrenia: `"schizophrenia"`
 

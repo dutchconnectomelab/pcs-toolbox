@@ -95,8 +95,8 @@ install.packages("R.matlab")
 source("path/to/your-repository/calculate_PCS.R")
 # Load R.matlab package
 library(R.matlab)
-# Load .mat file with connectivity data
-cnn <- readMat("path/to/your-repository/connectivity_data.mat")
+# Load RDS file with connectivity data
+cnn <- readRDS("path/to/your-connectivity-matrix.rds")
 # Calculate the PCS for schizophrenia using Desikian-Killiany atlas and global mean corrected
 PCS_subject <- calculate_PCS(cnn, disorder='schizophrenia', gmean=TRUE, atlas='aparc')
 ```
@@ -106,8 +106,9 @@ PCS_subject <- calculate_PCS(cnn, disorder='schizophrenia', gmean=TRUE, atlas='a
 ```matlab
 % Add the directory containing calculate_PCS.m to MATLAB's path:
 addpath('path/to/your-repository')
-% Load connectivity data 
+% Load .mat or .csv connectivity data 
 cnn = load('path/to/your-repository/connectivity_data.mat');
+# cnn = readmatrix('or/path/to/connectivity_data/in/csv/format.csv');
 # Calculate the PCS for schizophrenia using Desikian-Killiany atlas and global mean corrected
 PCS_subject = calculate_PCS(cnn, 'disorder', 'schizophrenia', 'gmean', true, 'atlas', 'aparc');
 ```
@@ -116,16 +117,15 @@ PCS_subject = calculate_PCS(cnn, 'disorder', 'schizophrenia', 'gmean', true, 'at
 
 ```python
 # Install the required Python packages:
-pip install numpy pandas scipy
+pip install numpy pandas
 
 # Ensure the calculate_PCS.py script is available in your working directory or in your Python path:
 sys.path.append('path/to/your-repository')
 
 import numpy as np
-import scipy.io
 from calculate_PCS import *
-# Load connectivity data 
-cnn = scipy.io.loadmat('path/to/your-repository/connectivity_data.mat')
+# Load .npy connectivity data
+cnn = np.load('path/to/your-repository/connectivity_data.npy')
 # Calculate the PCS for schizophrenia using Desikian-Killiany atlas and global mean corrected
 PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='aparc')
 ```

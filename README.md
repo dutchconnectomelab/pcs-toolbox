@@ -189,8 +189,6 @@ We advise using CSS with `gmean` if the provided `cnn` also uses this preprocess
 - <a href="#" title="Glasser, M. F., Coalson, T. S., Robinson, E. C., Hacker, C. D., Harwell, J., Yacoub, E., et al. (2016). A multi-modal parcellation of human cerebral cortex. Nature. http://doi.org/10.1038/nature18933">`hcp-mmp-b (GLASSER)`</a> (362 regions)
 - <a href="#" title="Beckmann, C. F., & Smith, S. M. (2004). Probabilistic independent component analysis for functional magnetic resonance imaging. IEEE Transactions on Medical Imaging, 23(2), 137-152. doi: 10.1109/TMI.2003.822821">`ica`</a> (20 regions)
 
-Ensure that the atlas used in the provided `cnn` matches the CSS.
-
 ### Output PCS Scores:
 The calculate_PCS function returns an array of PCS scores, one for each subject in the input data. Higher PCS indicate a stronger presence of connectivity patterns associated with the specified disorder. Importantly, scores are relative measures and should be interpreted in comparison to a control group or normative data.
 

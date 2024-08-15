@@ -68,7 +68,7 @@ In Python, ensure you have the following packages installed:
 You can install these packages in python using pip:
 
 ```bash
-pip install numpy pandas scipy
+pip install numpy pandas
 ```
 
 ### Input Data Format:
@@ -164,30 +164,31 @@ Global mean signal correction is a technique used to reduce the impact of non-ne
 We advise using CSS with `gmean` if the provided `cnn` also uses this preprocessing method.
 
 ### The PCS-Toolbox supports the following atlas parcellation schemes:
-- <a href="#" title="CITATION NEEDED">`BB50human`</a> (78 regions)
-- <a href="#" title="Brodmann, K. (1909). Vergleichende Lokalisationslehre der Grosshirnrinde in ihren Prinzipien dargestellt auf Grund des Zellenbaues. Barth.">`Brodmann`</a> (80 regions)
-- <a href="#" title="Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C., & Yeo, B. T. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. Journal of Neurophysiology, 106(5), 2322–2345.">`BucknerCer17`</a> (34 regions)
-- <a href="#" title="Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C., & Yeo, B. T. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. Journal of Neurophysiology, 106(5), 2322–2345.">`BucknerCer7`</a> (14 regions)
-- <a href="#" title="Campbell, A. W. (1905). Histological studies on the localisation of cerebral function. University Press.">`Campbell`</a> (32 regions)
-- <a href="#" title="Pijnenburg, R., Scholtens, L. H., Ardesch, D. J., de Lange, S. C., Wei, Y., & van den Heuvel, M. P. (2021). Myelo- and cytoarchitectonic microstructural and functional human cortical atlases reconstructed in common MRI space. NeuroImage, 239, Article 118274. https://doi.org/10.1016/j.neuroimage.2021.118274">`EconomoCT`</a> (32 regions)
-- <a href="#" title="Flechsig, P. E. (1920). Anatomie des menschlichen Gehirns und Rückenmarks auf myelogenetischer Grundlage (Vol. 1). G. Thieme.">`Flechsig`</a> (94 regions)
-- <a href="#" title="Fischl B, Salat DH, Busa E, Albert M, Dieterich M, Haselgrove C, van der Kouwe A, Killiany R, Kennedy D, Klaveness S, Montillo A, Makris N, Rosen B, Dale AM. Whole brain segmentation: automated labeling of neuroanatomical structures in the human brain. Neuron. 2002 Jan 31;33(3):341-55. doi: 10.1016/s0896-6273(02)00569-x">`fsSubCortical`</a> (130 regions)
-- <a href="#" title="Kleist, K. (1934). Gehirnpathologie, vornehmlich aufgrund der Kriegserfahrungen. Leipzig, Barth.">`Kleist`</a> (100 regions)
-- <a href="#" title="Diedrichsen, J. (2006). A spatially unbiased atlas template of the human cerebellum. NeuroImage, 33(1), 127–138.">`SUITCer`</a> (34 regions)
-- <a href="#" title="Smith, G. E. (1907). A new topographical survey of the human cerebral cortex, being an account of the distribution of the anatomically distinct cortical areas and their relationship to the cerebral sulci. Journal of Anatomy and Physiology, 41(Pt 4), 237.">`Smith`</a> (88 regions)
 - <a href="#" title="Tzourio-Mazoyer, N., Landeau, B., Papathanassiou, D., Crivello, F., Etard, O., Delcroix, N., et al. (2002). Automated anatomical labeling of activations in SPM using a macroscopic anatomical parcellation of the MNI MRI single-subject brain., 15(1), 273–289. http://doi.org/10.1006/nimg.2001.0978">`aal`</a> (82 regions)
 - <a href="#" title="Fischl, B., van der Kouwe, A., Destrieux, C., Halgren, E., Ségonne, F., Salat, D. H., Busa, E., Seidman, L. J., Goldstein, J., Kennedy, D., Caviness, V., Makris, N., Rosen, B., Dale, A. M. (2004). Automatically parcellating the human cerebral cortex. Cereb Cortex, 14(1), 11-22. doi: 10.1093/cercor/bhg087">`aparc (Desikan-Killiany)`</a> (68 regions)
 - <a href="#" title="Arslan, S., Ktena, S. I., Makropoulos, A., Robinson, E. C., Rueckert, D., Parisot, S. (2018). Human brain mapping: A systematic comparison of parcellation methods for the human cerebral cortex. NeuroImage, 170, 5-30. doi: 10.1016/j.neuroimage.2017.04.014">`arslan`</a> (50 regions)
 - <a href="#" title="Fischl, B., Salat, D. H., Busa, E., Albert, M., Dieterich, M., Haselgrove, C., van der Kouwe, A., Killiany, R., Kennedy, D., Klaveness, S., Montillo, A., Makris, N., Rosen, B., Dale, A. M. (2002). Whole brain segmentation: automated labeling of neuroanatomical structures in the human brain. Neuron, 33(3), 341-55. doi: 10.1016/s0896-6273(02)00569-x">`aseg`</a> (14 regions)
+- <a href="#" title="CITATION NEEDED">`BB50human`</a> (78 regions)
+- <a href="#" title="Brodmann, K. (1909). Vergleichende Lokalisationslehre der Grosshirnrinde in ihren Prinzipien dargestellt auf Grund des Zellenbaues. Barth.">`Brodmann`</a> (80 regions)
+- <a href="#" title="Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C., & Yeo, B. T. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. Journal of Neurophysiology, 106(5), 2322–2345.">`BucknerCer17`</a> (34 regions)
+- <a href="#" title="Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C., & Yeo, B. T. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. Journal of Neurophysiology, 106(5), 2322–2345.">`BucknerCer7`</a> (14 regions)
 - <a href="#" title="Baldassano, C., Beck, D. M., Fei-Fei, L. (2015). Parcellating connectivity in spatial maps. PeerJ, 3:e784. doi: 10.7717/peerj.784. PMID: 25737822; PMCID: PMC4338796.">`baldassano`</a> (170 regions)
 - <a href="#" title="Fan, L., Li, H., Zhuo, J., Zhang, Y., Wang, J., Chen, L., Yang, Z., Chu, C., Xie, S., Laird, A. R., Fox, P. T., Eickhoff, S. B., Yu, C., Jiang, T. (2016). The Human Brainnetome Atlas: A New Brain Atlas Based on Connectional Architecture. Cereb Cortex, 26(8), 3508-26. doi: 10.1093/cercor/bhw157. Epub 2016 May 26. PMID: 27230218; PMCID: PMC4961028.">`brainnetome`</a> (212 regions)
 - <a href="#" title="Fan, L., Li, H., Zhuo, J., Zhang, Y., Wang, J., Chen, L., Yang, Z., Chu, C., Xie, S., Laird, A. R., Fox, P. T., Eickhoff, S. B., Yu, C., Jiang, T. (2016). The Human Brainnetome Atlas: A New Brain Atlas Based on Connectional Architecture. Cereb Cortex, 26(8), 3508-26. doi: 10.1093/cercor/bhw157. Epub 2016 May 26. PMID: 27230218; PMCID: PMC4961028.">`brainnetome_subcortical`</a> (36 regions)
+- <a href="#" title="Campbell, A. W. (1905). Histological studies on the localisation of cerebral function. University Press.">`Campbell`</a> (32 regions)
+- <a href="#" title="Pijnenburg, R., Scholtens, L. H., Ardesch, D. J., de Lange, S. C., Wei, Y., & van den Heuvel, M. P. (2021). Myelo- and cytoarchitectonic microstructural and functional human cortical atlases reconstructed in common MRI space. NeuroImage, 239, Article 118274. https://doi.org/10.1016/j.neuroimage.2021.118274">`EconomoCT`</a> (32 regions)
 - <a href="#" title="Scholtens, L. H., de Reus, M. A., de Lange, S. C., Schmidt, R., van den Heuvel, M. P. (2018). An MRI Von Economo - Koskinas atlas. Neuroimage, 170, 249-256. doi: 10.1016/j.neuroimage.2016.12.069. Epub 2016 Dec 28. PMID: 28040542.">`economo`</a> (87 regions)
 - <a href="#" title="Fan, L., Li, H., Zhuo, J., Zhang, Y., Wang, J., Chen, L., Yang, Z., Chu, C., Xie, S., Laird, A. R., Fox, P. T., Eickhoff, S. B., Yu, C., Jiang, T. (2016). The Human Brainnetome Atlas: A New Brain Atlas Based on Connectional Architecture. Cerebral Cortex (New York, N.Y. : 1991), 26(8), 3508–3526. http://doi.org/10.1093/cercor/bhw157">`fan`</a> (209 regions)
+- <a href="#" title="Flechsig, P. E. (1920). Anatomie des menschlichen Gehirns und Rückenmarks auf myelogenetischer Grundlage (Vol. 1). G. Thieme.">`Flechsig`</a> (94 regions)
+- <a href="#" title="Fischl B, Salat DH, Busa E, Albert M, Dieterich M, Haselgrove C, van der Kouwe A, Killiany R, Kennedy D, Klaveness S, Montillo A, Makris N, Rosen B, Dale AM. Whole brain segmentation: automated labeling of neuroanatomical structures in the human brain. Neuron. 2002 Jan 31;33(3):341-55. doi: 10.1016/s0896-6273(02)00569-x">`fsSubCortical`</a> (130 regions)
 - <a href="#" title="Gordon, E. M., Laumann, T. O., Adeyemo, B., Huckins, J. F., Kelley, W. M., & Petersen, S. E. (2016). Generation and Evaluation of a Cortical Area Parcellation from Resting-State Correlations. Cerebral Cortex, 26(1), 288–303. http://doi.org/10.1093/cercor/bhu239">`gordon333dil`</a> (333 regions)
 - <a href="#" title="Desikan, R. S., Ségonne, F., Fischl, B., Quinn, B. T., Dickerson, B. C., Blacker, D., Buckner, R. L., Dale, A. M., Maguire, R. P., Hyman, B. T., Albert, M. S., Killiany, R. J. (2006). An automated labeling system for subdividing the human cerebral cortex on MRI scans into gyral based regions of interest. Neuroimage, 31(3), 968-80.">`harvardoxford`</a> (96 regions)
 - <a href="#" title="Glasser, M. F., Coalson, T. S., Robinson, E. C., Hacker, C. D., Harwell, J., Yacoub, E., et al. (2016). A multi-modal parcellation of human cerebral cortex. Nature. http://doi.org/10.1038/nature18933">`hcp-mmp-b (GLASSER)`</a> (362 regions)
 - <a href="#" title="Beckmann, C. F., & Smith, S. M. (2004). Probabilistic independent component analysis for functional magnetic resonance imaging. IEEE Transactions on Medical Imaging, 23(2), 137-152. doi: 10.1109/TMI.2003.822821">`ica`</a> (20 regions)
+- <a href="#" title="Kleist, K. (1934). Gehirnpathologie, vornehmlich aufgrund der Kriegserfahrungen. Leipzig, Barth.">`Kleist`</a> (100 regions)
+- <a href="#" title="Diedrichsen, J. (2006). A spatially unbiased atlas template of the human cerebellum. NeuroImage, 33(1), 127–138.">`SUITCer`</a> (34 regions)
+- <a href="#" title="Smith, G. E. (1907). A new topographical survey of the human cerebral cortex, being an account of the distribution of the anatomically distinct cortical areas and their relationship to the cerebral sulci. Journal of Anatomy and Physiology, 41(Pt 4), 237.">`Smith`</a> (88 regions)
+
 
 ### Output PCS Scores:
 The calculate_PCS function returns an array of PCS scores, one for each subject in the input data. Higher PCS indicate a stronger presence of connectivity patterns associated with the specified disorder. Importantly, scores are relative measures and should be interpreted in comparison to a control group or normative data.
@@ -215,5 +216,3 @@ Restricted Access Datasets
 - Marburg-Münster Affective Disorders Cohort Study (FOR2107): [for2107.de](http://for2107.de)
 
 ### License
-
-

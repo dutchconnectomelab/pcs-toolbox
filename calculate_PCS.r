@@ -1,4 +1,4 @@
-calculate_PCS <- function(cnn, disorder, gmean, atlas, p_threshold = NULL) {
+calculate_PCS <- function(cnn, disorder, gmean, atlas) {
   tryCatch({
     # Load appropriate CSS based on input arguments
     # DiseaseMap_parent_path <- 'PATH/TO/CSS/FOLDER'
@@ -11,26 +11,15 @@ calculate_PCS <- function(cnn, disorder, gmean, atlas, p_threshold = NULL) {
     disorder_path <- sprintf('fc_%s_%s%s', disorder, atlas, gmean_key)
     CSS_folder <- file.path(DiseaseMap_parent_path, 'functional-connectivity', sprintf('%s%s', atlas, gmean_key), disorder_path)
     cohen_d_path <- file.path(CSS_folder, 'mega_analysis_cohen_d.csv')
-    p_value_path <- file.path(CSS_folder, 'mega_analysis_pval.csv')
     
     # Load CSS matrix from specified path
     CSS_data <- read.csv(cohen_d_path, header = TRUE, check.names = FALSE, comment.char = "#")
     CSS <- as.matrix(CSS_data[, -1])
     
-    # Load p-value matrix if thresholding is requested
-    if (!is.null(p_threshold)) {
-        p_value_data <- read.csv(p_value_path, header = TRUE, check.names = FALSE, comment.char = "#")
-        p_values <- as.matrix(p_value_data[, -1])
-        p_values[p_values == "nan"] <- NA
-        p_values <- apply(p_values, 2, as.numeric)
-        p_values[lower.tri(p_values)] <- t(p_values)[lower.tri(p_values)]
-    } else {
-      p_values <- NULL
-    }
-    
     # Replace "nan" with NA
     CSS[CSS == "nan"] <- NA
     CSS <- apply(CSS, 2, as.numeric)
+    
     # Make matrix symmetric
     CSS[lower.tri(CSS)] <- t(CSS)[lower.tri(CSS)]
     
@@ -58,7 +47,7 @@ calculate_PCS <- function(cnn, disorder, gmean, atlas, p_threshold = NULL) {
     
     # Calculate PCS scores
     for (i in 1:num_subjects) {
-      PCS_scores[i] <- compute_PCS(cnn[,,i], CSS, p_values, p_threshold)
+      PCS_scores[i] <- compute_PCS(cnn[,,i], CSS)
     }
     
     # Handle NaN scores
@@ -75,17 +64,9 @@ calculate_PCS <- function(cnn, disorder, gmean, atlas, p_threshold = NULL) {
   })
 }
 
-compute_PCS <- function(cnn_matrix, CSS_matrix, p_value_matrix = NULL, p_threshold = NULL) {
+compute_PCS <- function(cnn_matrix, CSS_matrix) {
   tryCatch({
-    if (!is.null(p_value_matrix) && !is.null(p_threshold)) {
-      # Apply p-value thresholding
-      mask <- p_value_matrix < p_threshold
-      filtered_CSS <- ifelse(mask, CSS_matrix, 0)
-    } else {
-      filtered_CSS <- CSS_matrix
-    }
-    
-    PCS <- cnn_matrix * filtered_CSS
+    PCS <- cnn_matrix * CSS_matrix
     # Compute mean excluding NAs and zero values
     PCS <- mean(PCS[PCS != 0], na.rm = TRUE)
     return(PCS)

@@ -188,14 +188,22 @@ Datasets used in the creation of CSS can be accessed via their respective websit
 
 Openly Accessible Datasets
 - Autism Brain Imaging Data Exchange (ABIDE-I & ABIDE-II):  [fcon_1000.projects.nitrc.org/indi/abide](https://fcon_1000.projects.nitrc.org/indi/abide/)
+- Advancing Research and Treatment for Frontotemporal Lobar Degeneration - Longitudinal Evaluation of Familial Frontotemporal Dementia Subjects (ARTFL-LEFFTDS): [memory.ucsf.edu/research/studies/nifd](memory.ucsf.edu/research/studies/nifd) 
 - ADHD-200 Sample:  [nitrc.org/frs/?group_id=383](https://www.nitrc.org/frs/?group_id=383)
 - Alzheimer's Disease Neuroimaging Initiative (ADNI-2/GO & ADNI-3):  [ida.loni.usc.edu](https://ida.loni.usc.edu)
+- Boston Adolescent Neuroimaging of Depression and Anxiety (BANDA): ([NDA](https://nda.nih.gov); NDAR ID: 3037)
 - Bipolar & Schizophrenia Consortium for Parsing Intermediate Phenotypes (BSNIP-1): ([NDA](https://nda.nih.gov); NDAR ID: 2274)
+- Bipolar & Schizophrenia Consortium for Parsing Intermediate Phenotypes 2 (B-SNIP2): ([NDA](https://nda.nih.gov); NDAR ID: 2165)
+- Latin American Brain Health Institute (BrainLat): [synapse.org](https://www.synapse.org/Synapse:syn51549340/wiki/624187)
 - Centre for Biomedical Research Excellence (COBRE): [schizconnect.org](http://schizconnect.org)
 - Consortium for Neuropsychiatric Phenomics (CNP): OpenNeuro [openneuro.org](http://openneuro.org)
 - Healthy Brain Network (HBN): [fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network](http://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network)
 - Enhanced Nathan Kline Institute (NKI-Enhanced): [fcon_1000.projects.nitrc.org/indi/enhanced/](http://fcon_1000.projects.nitrc.org/indi/enhanced/)
 - Open Access Series of Imaging Studies (OASIS-3): [oasis-brains.org](http://www.oasis-brains.org)
+- Brain Function and Genetics in Pediatric Obsessive-Compulsive Behaviors (OCD-Pediatric): ([NDA](https://nda.nih.gov); NDAR ID: 2955)
+- Task Control Circuit Targets for Obsessive Compulsive Behaviors in Children (OCD-Task): ([NDA](https://nda.nih.gov); NDAR ID: 3044)
+- Parkinson’s Disease Yonemaya: [openfmri.org](https://openneuro.org/datasets/ds000245/versions/00001)
+- Parkinson’s Disease Tao Wu and NEUROCON: [fcon_1000.projects.nitrc.org/indi/retro/parkinsons.html](fcon_1000.projects.nitrc.org/indi/retro/parkinsons.html)
 - Japanese Strategic Research Program for the Promotion of Brain Science (SRPBS): [bicr-resource.atr.jp/srpbs1600](https://bicr-resource.atr.jp/srpbs1600)
 
 Restricted Access Datasets

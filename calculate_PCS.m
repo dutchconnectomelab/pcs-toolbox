@@ -37,7 +37,7 @@ function PCS_scores = calculate_PCS(cnn, varargin)
         % Construct folder and file paths
         disorder_path = sprintf('fc_%s_%s%s', disorder, atlas, gmean_key);
         CSS_folder = fullfile(DiseaseMap_parent_path, 'functional-connectivity', sprintf('%s%s', atlas, gmean_key), disorder_path);
-        cohen_d_path = fullfile(CSS_folder, 'mega_analysis_cohen_d.csv');
+        cohen_d_path = fullfile(CSS_folder, 'meta_analysis_cohen_d.csv');
     
         % Load CSS matrix from path
         CSS_data = readtable(cohen_d_path, 'ReadVariableNames', true);

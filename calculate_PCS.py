@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 
-def calculate_PCS(cnn, disorder, gmean, atlas, p_threshold=None):
+def calculate_PCS(cnn, disorder, gmean, atlas):
     try:
         # Load appropriate CSS based file path
         DiseaseMap_parent_path = Path(__file__).parent / "diseasemaps"
@@ -22,23 +22,10 @@ def calculate_PCS(cnn, disorder, gmean, atlas, p_threshold=None):
             disorder_path,
         )
         cohen_d_path = os.path.join(CSS_folder, "mega_analysis_cohen_d.csv")
-        p_value_path = os.path.join(CSS_folder, "mega_analysis_pval.csv")
 
         # Load CSS matrix from specified path
         CSS_data = pd.read_csv(cohen_d_path, header=0, comment="#")
         CSS = CSS_data.iloc[:, 1:].to_numpy()
-
-        # Load p-value matrix if thresholding is requested
-        if p_threshold is not None:
-            p_value_data = pd.read_csv(p_value_path, header=0, comment="#")
-            p_values = p_value_data.iloc[:, 1:].to_numpy()
-            p_values[p_values == "nan"] = np.nan
-            p_values = p_values.astype(float)
-            p_values[np.tril_indices_from(p_values)] = p_values.T[
-                np.tril_indices_from(p_values)
-            ]
-        else:
-            p_values = None
 
         # Replace "nan" with np.nan
         CSS[CSS == "nan"] = np.nan
@@ -69,7 +56,7 @@ def calculate_PCS(cnn, disorder, gmean, atlas, p_threshold=None):
 
         # Calculate PCS scores
         for i in range(num_subjects):
-            PCS_scores[i] = compute_PCS(cnn[:, :, i], CSS, p_values, p_threshold)
+            PCS_scores[i] = compute_PCS(cnn[:, :, i], CSS)
 
         # Handle NaN scores
         PCS_scores[PCS_scores == 0] = np.nan
@@ -83,16 +70,9 @@ def calculate_PCS(cnn, disorder, gmean, atlas, p_threshold=None):
         return None
 
 
-def compute_PCS(cnn, CSS_matrix, p_value_matrix=None, p_threshold=None):
+def compute_PCS(cnn_matrix, CSS_matrix):
     try:
-        if p_value_matrix is not None and p_threshold is not None:
-            # Apply p-value thresholding
-            mask = p_value_matrix < p_threshold
-            filtered_CSS = np.where(mask, CSS_matrix, 0)
-        else:
-            filtered_CSS = CSS_matrix
-
-        PCS = cnn * filtered_CSS
+        PCS = cnn_matrix * CSS_matrix
         PCS = np.nanmean(PCS[PCS != 0])
         return PCS
     except Exception as e:

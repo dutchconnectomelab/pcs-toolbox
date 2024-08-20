@@ -10,7 +10,7 @@ calculate_PCS <- function(cnn, disorder, gmean, atlas) {
     # Construct folder and file paths
     disorder_path <- sprintf('fc_%s_%s%s', disorder, atlas, gmean_key)
     CSS_folder <- file.path(DiseaseMap_parent_path, 'functional-connectivity', sprintf('%s%s', atlas, gmean_key), disorder_path)
-    cohen_d_path <- file.path(CSS_folder, 'mega_analysis_cohen_d.csv')
+    cohen_d_path <- file.path(CSS_folder, 'meta_analysis_cohen_d.csv')
     
     # Load CSS matrix from specified path
     CSS_data <- read.csv(cohen_d_path, header = TRUE, check.names = FALSE, comment.char = "#")

@@ -210,7 +210,6 @@ Openly Accessible Datasets
 - Enhanced Nathan Kline Institute (NKI-Enhanced): [fcon_1000.projects.nitrc.org/indi/enhanced/](http://fcon_1000.projects.nitrc.org/indi/enhanced/)
 - Open Access Series of Imaging Studies (OASIS-3): [oasis-brains.org](http://www.oasis-brains.org)
 - Japanese Strategic Research Program for the Promotion of Brain Science (SRPBS): [bicr-resource.atr.jp/srpbs1600](https://bicr-resource.atr.jp/srpbs1600)
-- UK Biobank (UKB): [ukbiobank.ac.uk](https://www.ukbiobank.ac.uk)
 
 Restricted Access Datasets
 - Marburg-Münster Affective Disorders Cohort Study (FOR2107): [for2107.de](http://for2107.de)

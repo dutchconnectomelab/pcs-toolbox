@@ -10,7 +10,6 @@ cnn = mat_data['connectivity']
 
 # Call calculate_PCS function
 PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='aparc')
-# PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='aparc', p_threshold=0.01)
 
 # Print first few scores
 print("First few PCS scores:")

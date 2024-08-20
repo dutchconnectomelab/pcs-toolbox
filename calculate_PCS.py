@@ -21,7 +21,7 @@ def calculate_PCS(cnn, disorder, gmean, atlas):
             f"{atlas}{gmean_key}",
             disorder_path,
         )
-        cohen_d_path = os.path.join(CSS_folder, "mega_analysis_cohen_d.csv")
+        cohen_d_path = os.path.join(CSS_folder, "meta_analysis_cohen_d.csv")
 
         # Load CSS matrix from specified path
         CSS_data = pd.read_csv(cohen_d_path, header=0, comment="#")

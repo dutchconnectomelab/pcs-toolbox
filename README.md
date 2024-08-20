@@ -83,6 +83,10 @@ The `cnn` parameter is a connectivity matrix representing functional brain conne
 
 This allows for flexibility in handling both single-subject and multi-subject connectivity data. It is crucial to ensure that the atlas used to generate the input connectivity matrix matches the atlas specified in the function parameters for accurate PCS calculation.
 
+### Ensure consistency in dimensions and region order
+
+To successfully calculate PCS, the connectivity matrix of a subject must match the dimensions of the CSS for the specified atlas. If the dimensions do not align, PCS calculations will not function correctly.
+Additionally, it is crucial that the order of regions in the connectivity matrix corresponds exactly to the order in the CSS. You can verify the order of regions by checking the index and columns of the disease map files provided. Please make sure to verify these details before running your analysis.
 
 ### Usage in R, MATLAB, and Python
 

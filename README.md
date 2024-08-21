@@ -167,7 +167,7 @@ We advise using CSS with `gmean` if the provided `cnn` also uses this preprocess
 
 ### The PCS-Toolbox supports the following atlas parcellation schemes:
 - <a href="#" title="Fischl, B., van der Kouwe, A., Destrieux, C., Halgren, E., Ségonne, F., Salat, D. H., Busa, E., Seidman, L. J., Goldstein, J., Kennedy, D., Caviness, V., Makris, N., Rosen, B., Dale, A. M. (2004). Automatically parcellating the human cerebral cortex. Cereb Cortex, 14(1), 11-22. doi: 10.1093/cercor/bhg087">`aparc (Desikan-Killiany)`</a> (68 regions)
-- <a href="#" title="CITATION NEEDED">`BB50human`</a> (76 regions)
+- <a href="#" title="Scholtens LH, Schmidt R, de Reus MA, van den Heuvel MP. Linking macroscale graph analytical organization to microscale neuroarchitectonics in the macaque connectome. J Neurosci. 2014 Sep 3;34(36):12192-205. doi: 10.1523/JNEUROSCI.0752-14.2014. PMID: 25186762; PMCID: PMC6608464.">`BB50human`</a> (76 regions)
 - <a href="#" title="Brodmann, K. (1909). Vergleichende Lokalisationslehre der Grosshirnrinde in ihren Prinzipien dargestellt auf Grund des Zellenbaues. Barth.">`Brodmann`</a> (78 regions)
 - <a href="#" title="Fan, L., Li, H., Zhuo, J., Zhang, Y., Wang, J., Chen, L., Yang, Z., Chu, C., Xie, S., Laird, A. R., Fox, P. T., Eickhoff, S. B., Yu, C., Jiang, T. (2016). The Human Brainnetome Atlas: A New Brain Atlas Based on Connectional Architecture. Cereb Cortex, 26(8), 3508-26. doi: 10.1093/cercor/bhw157. Epub 2016 May 26. PMID: 27230218; PMCID: PMC4961028.">`brainnetome`</a> (210 regions)
 - <a href="#" title="Campbell, A. W. (1905). Histological studies on the localisation of cerebral function. University Press.">`Campbell`</a> (34 regions)

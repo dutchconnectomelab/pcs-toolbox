@@ -42,12 +42,9 @@ def calculate_PCS(cnn, disorder, gmean, atlas):
             raise ValueError("cnn has more than 3 dimensions, which is not supported")
 
         # Input dimension/atlas check
-        print(f"Size of cnn: {cnn.shape[0]} x {cnn.shape[1]}")
-        print(f"Size of CSS: {CSS.shape[0]} x {CSS.shape[1]}")
         if not np.all(cnn.shape[:2] == CSS.shape):
-            print(
-                f"Warning: Dimensions of cnn and CSS do not match. cnn size: {cnn.shape[:2]}, CSS size: {CSS.shape}"
-            )
+            print("ERROR: Matrix dimensions between CSS and CNN must match. Please ensure that the same atlas is being used with the same order of regions.")
+            return None
 
         # Count subjects
         num_subjects = cnn.shape[2]

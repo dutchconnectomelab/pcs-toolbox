@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 
-def calculate_PCS(cnn, disorder, gmean, atlas):
+def calculate_PCS(cnn, *, disorder, gmean, atlas):
     try:
         # Load appropriate CSS based file path
         DiseaseMap_parent_path = Path(__file__).parent / "diseasemaps"

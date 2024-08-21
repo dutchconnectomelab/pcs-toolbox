@@ -93,8 +93,6 @@ Additionally, it is crucial that the order of regions in the connectivity matrix
 #### R
 
 ```r
-# Install the R.matlab package (if not already installed):
-install.packages("R.matlab")
 # Source the calculate_PCS.R script from your cloned repository:
 source("path/to/your-repository/calculate_PCS.R")
 # Load R.matlab package

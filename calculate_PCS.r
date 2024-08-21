@@ -36,8 +36,7 @@ calculate_PCS <- function(cnn, disorder, gmean, atlas) {
     cat('Size of CSS:', paste(dim(CSS), collapse = ' x '), '\n')
     
     if (!all(dim(cnn)[1:2] == dim(CSS))) {
-      warning(sprintf('Dimensions of cnn and CSS do not match. cnn size: %s, CSS size: %s',
-                      paste(dim(cnn)[1:2], collapse = ' x '), paste(dim(CSS), collapse = ' x ')))
+      stop('ERROR: Matrix dimensions between CSS and CNN must match. Please ensure that the same atlas is being used with the same order of regions.')
     }
     
     # Count subjects

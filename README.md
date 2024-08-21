@@ -95,8 +95,6 @@ Additionally, it is crucial that the order of regions in the connectivity matrix
 ```r
 # Source the calculate_PCS.R script from your cloned repository:
 source("path/to/your-repository/calculate_PCS.R")
-# Load R.matlab package
-library(R.matlab)
 # Load RDS file with connectivity data
 cnn <- readRDS("path/to/your-connectivity-matrix.rds")
 # Calculate the PCS for schizophrenia using Desikian-Killiany atlas and global mean corrected

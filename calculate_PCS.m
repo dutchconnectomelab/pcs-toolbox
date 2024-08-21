@@ -57,11 +57,11 @@ function PCS_scores = calculate_PCS(cnn, varargin)
         % Input dimension/atlas check
         disp(['Size of cnn: ', mat2str(size(cnn(:,:,1)))]);
         disp(['Size of CSS: ', mat2str(size(CSS))]);
+        
         if ~isequal(size(cnn(:,:,1)), size(CSS))
-            warning('Dimension Mismatch: The dimensions of the cnn matrix (%s) do not match the dimensions of the CSS matrix (%s). Please ensure that both matrices have compatible sizes.', ...
-                mat2str(size(cnn(:,:,1))), mat2str(size(CSS)));
+            error('ERROR: Matrix dimensions between CSS and CNN must match. Please ensure that the same atlas is being used with the same order of regions.');
         end
-    
+
         % Count subjects
         num_subjects = size(cnn, 3);
         PCS_scores = zeros(num_subjects, 1); % Preallocate

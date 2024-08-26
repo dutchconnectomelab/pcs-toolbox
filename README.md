@@ -20,7 +20,7 @@ This repository includes toolbox scripts and CSS of resting-state functional con
 - Effect size estimation per dataset: Cohen’s d was computed for each FC, corrected for age, sex, in-scanner motion, and site, generating a connectivity matrix for each dataset within a disorder. This matrix indicates connections with hypo-connectivity in patients (negative d) or hyper-connectivity in patients compared to controls (positive d).
 - Meta-Analysis: these connectivity-wise effects were aggregated across datasets for each disorder using a meta-analytic approach with a random-effects model.
 
-We provide the meta-analytic CSS for than 11 disorders, encompassing 10,667 individuals (5,325 patients, 5,342 unique controls) across 22 datasets, allowing researchers to compute PCS on their own data.
+We provide the meta-analytic CSS for 11 neuropsychiatric and neurological disorders, encompassing 10,667 individuals (5,325 patients, 5,342 unique controls) across 22 datasets, allowing researchers to compute PCS on their own data.
 
 ## Prerequisites
 - Python 3.7+, MATLAB, or R

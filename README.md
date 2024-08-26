@@ -14,7 +14,7 @@
 12. [License](#license)
 
 ## Introduction
-The PCS-Toolbox calculates Polyconnectomic Scores (PCS) to quantify the presence of disease-related brain connectivity signatures in individual connectomes. PCS integrates existing knowledge of disorder-related brain circuitry, aggregating these connectivity signatures or connectome summary statistics (CSS) across the entire brain into a single, interpretable metric.
+The PCS-toolbox calculates polyconnectomic score (PCS) to quantify the presence of disease-related brain connectivity signatures in individual connectomes. PCS integrates existing knowledge of disorder-related brain circuitry, aggregating these connectivity signatures or connectome summary statistics (CSS) across the entire brain into a single, interpretable metric.
 
 This repository includes toolbox scripts and CSS of resting-state functional connectivity (FC) signatures for various neuropsychiatric disorders. These CSS represent the strength and direction of associations between brain connections and specific disorders across connectomes. The CSS were generated through the following process:
 - Effect size estimation per dataset: Cohen’s d was computed for each FC, corrected for age, sex, in-scanner motion, and site, generating a connectivity matrix for each dataset within a disorder. This matrix indicates connections with hypo-connectivity in patients (negative d) or hyper-connectivity in patients compared to controls (positive d).

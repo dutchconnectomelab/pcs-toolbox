@@ -16,11 +16,11 @@
 ## Introduction
 The PCS-Toolbox calculates Polyconnectomic Scores (PCS) to quantify the presence of disease-related brain connectivity signatures in individual connectomes. PCS integrates existing knowledge of disorder-related brain circuitry, aggregating these connectivity signatures or connectome summary statistics (CSS) across the entire brain into a single, interpretable metric.
 
-This repository includes toolbox scripts and CSS of connectivity signatures for various neuropsychiatric disorders. These CSS represent the strength and direction of associations between brain connections and specific disorders across connectomes. The CSS were generated through the following process:
-- Effect size estimation per dataset: Cohen's d was computed for each brain connection, creating a connectivity matrix for each dataset within a disorder. This matrix indicates connections with decreased functional connectivity (FC) in patients (negative d) or increased FC in patients compared to controls (positive d).
-- Meta-Analysis: A meta-analysis was conducted to aggregate these connectivity-wise effects across datasets for each disorder.
+This repository includes toolbox scripts and CSS of resting-state functional connectivity (FC) signatures for various neuropsychiatric disorders. These CSS represent the strength and direction of associations between brain connections and specific disorders across connectomes. The CSS were generated through the following process:
+- Effect size estimation per dataset: Cohen’s d was computed for each FC, corrected for age, sex, in-scanner motion, and site, generating a connectivity matrix for each dataset within a disorder. This matrix indicates connections with hypo-connectivity in patients (negative d) or hyper-connectivity in patients compared to controls (positive d).
+- Meta-Analysis: these connectivity-wise effects were aggregated across datasets for each disorder using a meta-analytic approach with a random-effects model.
 
-We provide the meta-analytic CSS for more than 10 disorders, encompassing approximately 5,000 patients and 5,000 controls across 20+ datasets, allowing researchers to compute PCS on their own data.
+We provide the meta-analytic CSS for than 11 disorders, encompassing 10,667 individuals (5,325 patients, 5,342 unique controls) across 22 datasets, allowing researchers to compute PCS on their own data.
 
 ## Prerequisites
 - Python 3.7+, MATLAB, or R

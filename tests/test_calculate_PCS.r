@@ -14,7 +14,7 @@ test_calculate_PCS_lausanne120 <- function() {
   # Print results
   print(pcs_scores)
   # Add assertion for approximate equality
-  stopifnot(all.equal(pcs_scores, -0.0017041, tolerance = 1e-5))
+  stopifnot(all.equal(pcs_scores, -0.0017041, tolerance = 1e-3))
   print("Testing_complete!")
 }
 

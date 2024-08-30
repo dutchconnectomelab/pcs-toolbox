@@ -20,9 +20,6 @@ calculate_PCS <- function(cnn, disorder, gmean, atlas) {
     CSS[CSS == "nan"] <- NA
     CSS <- apply(CSS, 2, as.numeric)
     
-    # Make matrix symmetric
-    CSS[lower.tri(CSS)] <- t(CSS)[lower.tri(CSS)]
-    
     # Determine if cnn is 2D or 3D
     cnn_dims <- length(dim(cnn))
     if (cnn_dims == 2) {

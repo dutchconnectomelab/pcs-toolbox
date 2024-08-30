@@ -27,9 +27,6 @@ def calculate_PCS(cnn, *, disorder, gmean, atlas):
         CSS[CSS == "nan"] = np.nan
         CSS = CSS.astype(float)
 
-        # Make matrix symmetric
-        CSS[np.tril_indices_from(CSS)] = CSS.T[np.tril_indices_from(CSS)]
-
         # Determine if cnn is 2D or 3D
         cnn_dims = cnn.ndim
         if cnn_dims == 2:

@@ -153,20 +153,7 @@ PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='ap
 
 When using the `calculate_PCS` function, specify the disorder parameter using its key (e.g., `'adhd'`, `'ftd'`, `'schizophrenia'`, etc.).
 
-When computing PCS for a particular disorder using the precomputed CSS, please cite the corresponding papers listed in [Citations](/citations.md).
-These sources were used for computing the CSS.
-
-### Global Mean Correction (gmean)
-
-Global mean signal correction is a technique used to reduce the impact of non-neural physiological noise in fMRI data, although its use is debated in the neuroimaging community as it can also remove some neural signals of interest. The PCS-Toolbox provides options for both corrected and uncorrected CSS, allowing researchers to choose based on their specific research questions and methodological preferences.
-
-- When `gmean=True` (Python) or `gmean` is included (MATLAB/R), the toolbox uses functional CSS that have been corrected for global mean signal. This correction involved regressing out the framewise mean signal intensity of all brain voxels.
-
-- When `gmean=False` (Python) or the parameter is omitted (MATLAB/R), the toolbox uses functional CSS without global mean signal correction.
-
-We advise using CSS with `gmean` if the provided `cnn` also uses this preprocessing method.
-
-### Demographics for precomputed CSSs
+The demographics of the samples used to compute the CSS per disorder are as follows:
 
 | Disorder                                 |   Patients, n |   Controls, n | Age (Mean ± SD)   | Male/Female, n   |   Datasets, n |
 |------------------------------------------|---------------|---------------|-------------------|------------------|---------------|
@@ -181,6 +168,19 @@ We advise using CSS with `gmean` if the provided `cnn` also uses this preprocess
 | Parkinson’s disease                      |           102 |           125 | 66.4 ± 8.5        | 110/117          |             4 |
 | Schizoaffective disorder                 |           235 |           812 | 37.2 ± 12.8       | 403/644          |             3 |
 | Schizophrenia                            |           532 |          1882 | 36.5 ± 13.6       | 1254/1160        |             6 |
+
+When computing PCS for a particular disorder using the precomputed CSS, please cite the corresponding papers listed in [Citations](/citations.md).
+These sources were used for computing the CSS.
+
+### Global Mean Correction (gmean)
+
+Global mean signal correction is a technique used to reduce the impact of non-neural physiological noise in fMRI data, although its use is debated in the neuroimaging community as it can also remove some neural signals of interest. The PCS-Toolbox provides options for both corrected and uncorrected CSS, allowing researchers to choose based on their specific research questions and methodological preferences.
+
+- When `gmean=True` (Python) or `gmean` is included (MATLAB/R), the toolbox uses functional CSS that have been corrected for global mean signal. This correction involved regressing out the framewise mean signal intensity of all brain voxels.
+
+- When `gmean=False` (Python) or the parameter is omitted (MATLAB/R), the toolbox uses functional CSS without global mean signal correction.
+
+We advise using CSS with `gmean` if the provided `cnn` also uses this preprocessing method.
 
 ### The PCS-Toolbox supports the following atlas parcellation schemes:
 - <a href="#" title="Fischl, B., van der Kouwe, A., Destrieux, C., Halgren, E., Ségonne, F., Salat, D. H., Busa, E., Seidman, L. J., Goldstein, J., Kennedy, D., Caviness, V., Makris, N., Rosen, B., Dale, A. M. (2004). Automatically parcellating the human cerebral cortex. Cereb Cortex, 14(1), 11-22. doi: 10.1093/cercor/bhg087">`aparc (Desikan-Killiany)`</a> (68 regions)

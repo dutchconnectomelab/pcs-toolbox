@@ -25,8 +25,8 @@ We provide the meta-analytic CSS for 11 neuropsychiatric and neurological disord
 ## Prerequisites
 - Python 3.7+, MATLAB, or R
 #### Required packages:
-- Python: NumPy, Pandas, SciPy
-- R: R.matlab
+- Python: NumPy >=v1.21.0
+- R: No additional packages required
 - MATLAB: No additional toolboxes required
 
 ## Setup

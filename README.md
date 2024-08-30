@@ -153,6 +153,22 @@ PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='ap
 
 When using the `calculate_PCS` function, specify the disorder parameter using its key (e.g., `'adhd'`, `'ftd'`, `'schizophrenia'`, etc.).
 
+The demographics of the samples used to compute the CSS per disorder are as follows:
+
+| Disorder                                 |   Patients, n |   Controls, n | Age (Mean ± SD)   | Male/Female, n   |   Datasets, n |
+|------------------------------------------|---------------|---------------|-------------------|------------------|---------------|
+| Alzheimer's disease                      |           270 |           866 | 72.0 ± 8.9        | 510/626          |             4 |
+| Anxiety-related disorders                |           366 |           840 | 27.1 ± 21.3       | 505/701          |             3 |
+| Attention-deficit/hyperactivity disorder |          1211 |          1417 | 19.1 ± 16.7       | 1518/1110        |             4 |
+| Autism spectrum disorder                 |          1151 |          2086 | 21.6 ± 14.3       | 2530/707         |             4 |
+| Bipolar disorder                         |           320 |          1790 | 36.3 ± 13.8       | 975/1135         |             5 |
+| Frontotemporal dementia                  |           156 |           143 | 64.0 ± 8.5        | 144/155          |             2 |
+| Major depressive disorder                |           884 |          1605 | 33.9 ± 15.8       | 1122/1367        |             4 |
+| Obsessive-compulsive disorder            |            98 |           261 | 12.7 ± 4.5        | 170/189          |             3 |
+| Parkinson’s disease                      |           102 |           125 | 66.4 ± 8.5        | 110/117          |             4 |
+| Schizoaffective disorder                 |           235 |           812 | 37.2 ± 12.8       | 403/644          |             3 |
+| Schizophrenia                            |           532 |          1882 | 36.5 ± 13.6       | 1254/1160        |             6 |
+
 When computing PCS for a particular disorder using the precomputed CSS, please cite the corresponding papers listed in [Citations](/citations.md).
 These sources were used for computing the CSS.
 

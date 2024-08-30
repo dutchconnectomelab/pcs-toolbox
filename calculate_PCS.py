@@ -1,9 +1,6 @@
 import os
 from pathlib import Path
-
 import numpy as np
-import pandas as pd
-
 
 def calculate_PCS(cnn, *, disorder, gmean, atlas):
     try:
@@ -24,8 +21,7 @@ def calculate_PCS(cnn, *, disorder, gmean, atlas):
         cohen_d_path = os.path.join(CSS_folder, "meta_analysis_cohen_d.csv")
 
         # Load CSS matrix from specified path
-        CSS_data = pd.read_csv(cohen_d_path, header=0, comment="#")
-        CSS = CSS_data.iloc[:, 1:].to_numpy()
+        CSS = np.genfromtxt(cohen_d_path, delimiter=',', skip_header=1, comments='#')[:, 1:]
 
         # Replace "nan" with np.nan
         CSS[CSS == "nan"] = np.nan

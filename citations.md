@@ -6,7 +6,7 @@ Alzheimer's disease:
 - Beckett LA, Donohue MC, Wang C, Aisen P, Harvey DJ, Saito N, Alzheimer’s Disease Neuroimaging Initiative (2015): The Alzheimer’s Disease Neuroimaging Initiative phase 2: Increasing the length, breadth, and depth of our understanding. Alzheimers Dement 11: 823–831.
 - Weiner MW, Veitch DP, Aisen PS, Beckett LA, Cairns NJ, Green RC, et al. (2017): The Alzheimer’s Disease Neuroimaging Initiative 3: Continued innovation for clinical trial improvement. Alzheimers Dement 13: 561–571.
 - Prado P, Medel V, Gonzalez-Gomez R, Sainz-Ballesteros A, Vidal V, Santamaría-García H, et al. (2023): The BrainLat project, a multimodal neuroimaging dataset of neurodegeneration from underrepresented backgrounds. Sci Data 10: 889.
-- LaMontagne PJ, Benzinger TLS, Morris JC, Keefe S, Hornbeck R, Xiong C, et al. (2019): OASIS-3: Longitudinal Neuroimaging, Clinical, and Cognitive Dataset for Normal Aging and Alzheimer Disease. Radiology and Imaging. https://doi.org/10.1101/2019.12.13.19014902
+- LaMontagne PJ, Benzinger TLS, Morris JC, Keefe S, Hornbeck R, Xiong C, et al. (2019): OASIS-3: Longitudinal Neuroimaging, Clinical, and Cognitive Dataset for Normal Aging and Alzheimer Disease. Radiology and Imaging.
 
 Anxiety-related disorders:
 - Tanaka SC, Yamashita A, Yahata N, Itahashi T, Lisi G, Yamada T, et al. (2021): A multi-site, multi-disorder resting-state magnetic resonance image database. Sci Data 8: 227.
@@ -14,7 +14,7 @@ Anxiety-related disorders:
 - Alexander LM, Escalera J, Ai L, Andreotti C, Febre K, Mangone A, et al. (2017): An open resource for transdiagnostic research in pediatric mental health and learning disorders. Sci Data 4: 170181.
 
 Attention-deficit/hyperactivity disorder:
-- ADHD-200 Consortium T (2012): The ADHD-200 Consortium: a model to advance the translational potential of neuroimaging in clinical neuroscience. Front Syst Neurosci 6. https://doi.org/10.3389/fnsys.2012.00062
+- ADHD-200 Consortium T (2012): The ADHD-200 Consortium: a model to advance the translational potential of neuroimaging in clinical neuroscience. Front Syst Neurosci 6.
 - Tobe RH, MacKay-Brandt A, Lim R, Kramer M, Breland MM, Tu L, et al. (2022): A longitudinal resource for studying connectome development and its psychiatric associations during childhood. Sci Data 9: 300.
 - Poldrack RA, Congdon E, Triplett W, Gorgolewski KJ, Karlsgodt KH, Mumford JA, et al. (2016): A phenome-wide examination of neural and cognitive function. Sci Data 3: 160110.
 - Alexander LM, Escalera J, Ai L, Andreotti C, Febre K, Mangone A, et al. (2017): An open resource for transdiagnostic research in pediatric mental health and learning disorders. Sci Data 4: 170181.

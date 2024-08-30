@@ -166,7 +166,7 @@ Global mean signal correction is a technique used to reduce the impact of non-ne
 
 We advise using CSS with `gmean` if the provided `cnn` also uses this preprocessing method.
 
-### Demographics for precomputed diseasemaps
+### Demographics for precomputed CSSs
 
 | Disorder                                 |   Patients, n |   Controls, n | Age (Mean ± SD)   | Male/Female, n   |   Datasets, n |
 |------------------------------------------|---------------|---------------|-------------------|------------------|---------------|

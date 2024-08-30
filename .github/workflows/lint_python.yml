@@ -23,8 +23,8 @@ jobs:
       - name: Run Flake8
         run: flake8 --ignore E203,E501,W503
       - name: Black code style
-        run: black --check --target-version py36 brain_reproducibility
+        run: black --check --target-version py36 .
       - name: Check import order with isort
         run: isort . --check --diff
       - name: Type check with PyType
-        run: pytype brain_reproducibility --jobs auto
+        run: pytype . --jobs auto

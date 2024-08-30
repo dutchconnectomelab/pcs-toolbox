@@ -52,23 +52,14 @@ Clone this repository:
 
 ### Installation Dependencies
 
-
-In R, ensure you have the `R.matlab` package installed; you can install it using the following command within R:
-
-```r
-install.packages("R.matlab")
-```
-
 In Python, ensure you have the following packages installed:
 
 - NumPy
-- Pandas
-- SciPy
 
 You can install these packages in python using pip:
 
 ```bash
-pip install numpy pandas
+pip install numpy
 ```
 
 ### Input Data Format:

@@ -14,4 +14,4 @@ jobs:
 
     - name: Run tests
       run: |
-        Rscript tests/test_calculate_PCS.R
+        Rscript tests/test_calculate_PCS.r

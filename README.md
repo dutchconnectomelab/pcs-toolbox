@@ -153,8 +153,8 @@ PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='ap
 
 When using the `calculate_PCS` function, specify the disorder parameter using its key (e.g., `'adhd'`, `'ftd'`, `'schizophrenia'`, etc.).
 
-When using any of the precomputed CSSs, please cite the corresponding papers listed in [Citations](/citations.md).
-These sources were used for computing the CSSs.
+When computing PCS for a particular disorder using the precomputed CSS, please cite the corresponding papers listed in [Citations](/citations.md).
+These sources were used for computing the CSS.
 
 ### Global Mean Correction (gmean)
 

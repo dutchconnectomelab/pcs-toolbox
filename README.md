@@ -153,6 +153,9 @@ PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='ap
 
 When using the `calculate_PCS` function, specify the disorder parameter using its key (e.g., `'adhd'`, `'ftd'`, `'schizophrenia'`, etc.).
 
+When computing PCS for a particular disorder using the precomputed CSS, please cite the corresponding papers listed in [Citations](/citations.md).
+These sources were used for computing the CSS.
+
 ### Global Mean Correction (gmean)
 
 Global mean signal correction is a technique used to reduce the impact of non-neural physiological noise in fMRI data, although its use is debated in the neuroimaging community as it can also remove some neural signals of interest. The PCS-Toolbox provides options for both corrected and uncorrected CSS, allowing researchers to choose based on their specific research questions and methodological preferences.

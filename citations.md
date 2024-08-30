@@ -1,6 +1,6 @@
 # Citations
 
-When using PCS scores based on one of the precomputed disease maps, please cite the follow papers (data used for computation of the disease maps).
+When using PCS scores for a particular disorder using the precomputed CSS, please cite the corresponding papers listed below (data used for computation of the CSS).
 
 Alzheimer's disease:
 - Beckett LA, Donohue MC, Wang C, Aisen P, Harvey DJ, Saito N, Alzheimer’s Disease Neuroimaging Initiative (2015): The Alzheimer’s Disease Neuroimaging Initiative phase 2: Increasing the length, breadth, and depth of our understanding. Alzheimers Dement 11: 823–831.

@@ -108,7 +108,7 @@ PCS_subject = calculate_PCS(cnn, 'disorder', 'schizophrenia', 'gmean', true, 'at
 
 ```python
 # Install the required Python packages:
-pip install numpy pandas
+pip install numpy 
 
 # Ensure the calculate_PCS.py script is available in your working directory or in your Python path:
 sys.path.append('path/to/your-repository')

@@ -14,7 +14,7 @@
 12. [License](#license)
 
 ## Introduction
-The PCS-toolbox calculates polyconnectomic score (PCS) to quantify the presence of disease-related brain connectivity signatures in individual connectomes. PCS integrates existing knowledge of disorder-related brain circuitry, aggregating these connectivity signatures or connectome summary statistics (CSS) across the entire brain into a single, interpretable metric.
+The PCS toolbox calculates polyconnectomic score (PCS) to quantify the presence of disease-related brain connectivity signatures in individual connectomes. PCS integrates existing knowledge of disorder-related brain circuitry, aggregating these connectivity signatures or connectome summary statistics (CSS) across the entire brain into a single, interpretable metric.
 
 This repository includes toolbox scripts and CSS of resting-state functional connectivity (FC) signatures for various neuropsychiatric disorders. These CSS represent the strength and direction of associations between brain connections and specific disorders across connectomes. The CSS were generated through the following process:
 - Effect size estimation per dataset: Cohen’s d was computed for each FC, corrected for age, sex, in-scanner motion, and site, generating a connectivity matrix for each dataset within a disorder. This matrix indicates connections with hypo-connectivity in patients (negative d) or hyper-connectivity in patients compared to controls (positive d).
@@ -128,7 +128,7 @@ PCS_subject = calculate_PCS(cnn, disorder='schizophrenia', gmean=True, atlas='ap
 - `gmean`: Boolean, whether to use functional global mean normalization
 - `atlas`: Name of the brain atlas used in both `cnn` and CSS creation
 
-### The PCS-Toolbox supports the following neuropsychiatric and neurodegenerative disorders:
+### The PCS toolbox supports the following neuropsychiatric and neurodegenerative disorders:
 
 - Alzheimer's disease: `"alzheimer"`
 - Anxiety-related disorders: `"anxiety"`
@@ -165,7 +165,7 @@ These sources were used for computing the CSS.
 
 ### Global Mean Correction (gmean)
 
-Global mean signal correction is a technique used to reduce the impact of non-neural physiological noise in fMRI data, although its use is debated in the neuroimaging community as it can also remove some neural signals of interest. The PCS-Toolbox provides options for both corrected and uncorrected CSS, allowing researchers to choose based on their specific research questions and methodological preferences.
+Global mean signal correction is a technique used to reduce the impact of non-neural physiological noise in fMRI data, although its use is debated in the neuroimaging community as it can also remove some neural signals of interest. The PCS toolbox provides options for both corrected and uncorrected CSS, allowing researchers to choose based on their specific research questions and methodological preferences.
 
 - When `gmean=True` (Python) or `gmean` is included (MATLAB/R), the toolbox uses functional CSS that have been corrected for global mean signal. This correction involved regressing out the framewise mean signal intensity of all brain voxels.
 
@@ -173,7 +173,7 @@ Global mean signal correction is a technique used to reduce the impact of non-ne
 
 We advise using CSS with `gmean` if the provided `cnn` also uses this preprocessing method.
 
-### The PCS-Toolbox supports the following atlas parcellation schemes:
+### The PCS toolbox supports the following atlas parcellation schemes:
 - <a href="#" title="Fischl, B., van der Kouwe, A., Destrieux, C., Halgren, E., Ségonne, F., Salat, D. H., Busa, E., Seidman, L. J., Goldstein, J., Kennedy, D., Caviness, V., Makris, N., Rosen, B., Dale, A. M. (2004). Automatically parcellating the human cerebral cortex. Cereb Cortex, 14(1), 11-22. doi: 10.1093/cercor/bhg087">`aparc (Desikan-Killiany)`</a> (68 regions)
 - <a href="#" title="Ardesch, D. J., Scholtens, L. H., Li, L., Preuss, T. M., Rilling, J. K., & van den Heuvel, M. P. (2019). Evolutionary expansion of connectivity between multimodal association areas in the human brain compared with chimpanzees. Proceedings of the National Academy of Sciences, 116(14), 7101-7106. DOI: 10.1073/pnas.1818512116. PMID: 30886094. PMCID: PMC6452697.">`BB50human`</a> (76 regions)
 - <a href="#" title="Brodmann, K. (1909). Vergleichende Lokalisationslehre der Grosshirnrinde in ihren Prinzipien dargestellt auf Grund des Zellenbaues. Barth.">`Brodmann`</a> (78 regions)
@@ -203,8 +203,8 @@ We advise using CSS with `gmean` if the provided `cnn` also uses this preprocess
 ### Output PCS Scores:
 The calculate_PCS function returns an array of PCS scores, one for each subject in the input data. Higher PCS indicate a stronger presence of connectivity patterns associated with the specified disorder. Importantly, scores are relative measures and should be interpreted in comparison to a control group or normative data.
 
-### Citing the PCS-Toolbox:
-If you use the PCS-Toolbox in your research, please cite: 
+### Citing the PCS toolbox:
+If you use the PCS toolbox in your research, please cite: 
 - Libedinsky, I., Helwegen, K., Simón, L. G., Gruber, M., Repple, J., Kircher, T., ... & van den Heuvel, M. P. (2023). Quantifying brain connectivity signatures by means of polyconnectomic scoring. bioRxiv.
 
 Datasets used in the creation of CSS can be accessed via their respective websites:

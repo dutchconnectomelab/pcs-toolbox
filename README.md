@@ -205,7 +205,7 @@ The calculate_PCS function returns an array of PCS scores, one for each subject 
 
 ### Citing the PCS-Toolbox:
 If you use the PCS-Toolbox in your research, please cite: 
-- ___"APA CITATION OF ILAN'S PCS PAPER"___ 
+- Libedinsky, I., Helwegen, K., Simón, L. G., Gruber, M., Repple, J., Kircher, T., ... & van den Heuvel, M. P. (2023). Quantifying brain connectivity signatures by means of polyconnectomic scoring. bioRxiv.
 
 Datasets used in the creation of CSS can be accessed via their respective websites:
 

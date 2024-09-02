@@ -10,7 +10,7 @@
 8. [Global Mean Correction (gmean)](#global-mean-correction-gmean)
 9. [Supported Atlas Parcellation Schemes](#supported-atlas-parcellation-schemes)
 10. [Output PCS Scores](#output-pcs-scores)
-11. [Citing the PCS-Toolbox](#citing-the-pcs-toolbox)
+11. [Citing the PCS toolbox](#citing-the-pcs-toolbox)
 12. [License](#license)
 
 ## Introduction

@@ -203,10 +203,7 @@ We advise using CSS with `gmean` if the provided `cnn` also uses this preprocess
 ### Output PCS Scores:
 The calculate_PCS function returns an array of PCS scores, one for each subject in the input data. Higher PCS indicate a stronger presence of connectivity patterns associated with the specified disorder. Importantly, scores are relative measures and should be interpreted in comparison to a control group or normative data.
 
-### Citing the PCS toolbox:
-If you use the PCS toolbox in your research, please cite: 
-- Libedinsky, I., Helwegen, K., Simón, L. G., Gruber, M., Repple, J., Kircher, T., ... & van den Heuvel, M. P. (2023). Quantifying brain connectivity signatures by means of polyconnectomic scoring. bioRxiv.
-
+### Datasets
 Datasets used in the creation of CSS can be accessed via their respective websites:
 
 Openly Accessible Datasets

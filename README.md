@@ -32,7 +32,7 @@ We provide the meta-analytic CSS for 11 neuropsychiatric and neurological disord
 ## Setup
 Clone this repository:
 
-```git clone https://github.com/dutchconnectomelab/connect-toolbox.git```
+```git clone https://github.com/dutchconnectomelab/pcs-toolbox.git```
 
 
 ### For R Users

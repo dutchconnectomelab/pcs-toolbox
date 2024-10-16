@@ -160,9 +160,6 @@ The demographics of the samples used to compute the CSS per disorder are as foll
 | Schizoaffective disorder                 |           235 |           812 | 37.2 ± 12.8       | 403/644          |             3 |
 | Schizophrenia                            |           532 |          1882 | 36.5 ± 13.6       | 1254/1160        |             6 |
 
-When computing PCS for a particular disorder using the precomputed CSS, please cite the corresponding papers listed in [Citations](/citations.md).
-These sources were used for computing the CSS.
-
 ### Global Mean Correction (gmean)
 
 Global mean signal correction is a technique used to reduce the impact of non-neural physiological noise in fMRI data, although its use is debated in the neuroimaging community as it can also remove some neural signals of interest. The PCS toolbox provides options for both corrected and uncorrected CSS, allowing researchers to choose based on their specific research questions and methodological preferences.
@@ -230,7 +227,11 @@ Restricted Access Datasets
 - Marburg-Münster Affective Disorders Cohort Study (FOR2107): [for2107.de](http://for2107.de)
   
 ### Citing the PCS toolbox
+When usin PCS toolbox, pleas cite the following paper:
 Libedinsky, I., Helwegen, K., Boonstra, J., Guerrero Simón, L., Gruber, M., Repple, J., et al. (2024). Polyconnectomic scoring of functional connectivity patterns across eight neuropsychiatric and three neurodegenerative disorders. Biological Psychiatry. https://doi.org/10.1016/j.biopsych.2024.10.007
+
+When computing PCS for a particular disorder using the precomputed CSS, please cite the corresponding papers listed in [Citations](/citations.md).
+These sources were used for computing the CSS.
 
 ### License
 pcs-toolbox © 2024 by dutchconnectomelab is licensed under CC BY-NC 4.0.

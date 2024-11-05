@@ -209,7 +209,7 @@ Openly Accessible Datasets
 - ADHD-200 Sample:  [nitrc.org/frs/?group_id=383](https://www.nitrc.org/frs/?group_id=383)
 - Alzheimer's Disease Neuroimaging Initiative (ADNI-2/GO & ADNI-3):  [ida.loni.usc.edu](https://ida.loni.usc.edu)
 - Boston Adolescent Neuroimaging of Depression and Anxiety (BANDA): ([NDA](https://nda.nih.gov); NDAR ID: 3037)
-- Bipolar & Schizophrenia Consortium for Parsing Intermediate Phenotypes (BSNIP-1): ([NDA](https://nda.nih.gov); NDAR ID: 2274)
+- Bipolar & Schizophrenia Consortium for Parsing Intermediate Phenotypes (B-SNIP1): ([NDA](https://nda.nih.gov); NDAR ID: 2274)
 - Bipolar & Schizophrenia Consortium for Parsing Intermediate Phenotypes 2 (B-SNIP2): ([NDA](https://nda.nih.gov); NDAR ID: 2165)
 - Latin American Brain Health Institute (BrainLat): [synapse.org](https://www.synapse.org/Synapse:syn51549340/wiki/624187)
 - Centre for Biomedical Research Excellence (COBRE): [schizconnect.org](http://schizconnect.org)
